@@ -1,0 +1,97 @@
+
+.formulary-container{
+    background-color: rgba(242, 227, 213, 0.5)
+}
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    
+}
+
+h2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+.check-box {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    margin: 10px; 
+    padding: 4px;
+}
+
+.enviar {
+    font: 18px bold;
+    display: block;
+    background-color: #026773;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    margin: 0 auto; 
+    width: 80%;
+    max-width: 300px;
+    margin-bottom: 10px
+}
+
+.enviar:hover {
+    background: #3CA6A6;
+    border-color: #3CA6A6;
+}
+
+p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+}
+
+
+
+@media (max-width: 576px) {
+    form {
+        padding: 10px;
+    }
+
+    .enviar{
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+    }
+
+}
+
+
+/* escritorio */
+@media (min-width: 769px) {
+    form {
+        max-width: 600px;
+    }
+
+    .enviar {
+        display: block;
+        background-color: #03A6A6;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        margin: 0 auto; 
+        width: 80%;
+        max-width: 300px;
+    }
+}
+
