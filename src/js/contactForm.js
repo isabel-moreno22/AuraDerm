@@ -1,47 +1,46 @@
-// document.addEventListener('DOMContentLoaded', function() {
-//     //console.log('DOM completamente cargado y parseado');
+document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('contactForm').addEventListener('submit', function (event) {
+        event.preventDefault();
 
-// document.getElementById('contactForm').addEventListener('submit', function(event) {
-//     event.preventDefault();
+        let name = document.getElementById('name').value.trim();
+        let email = document.getElementById('email').value.trim();
+        let tel = document.getElementById('tel').value.trim();
+        let message = document.getElementById('message').value.trim()
 
-//     let email = document.getElementById('email').value;
-//     let tel = document.getElementById('tel').value;
-//     let message = document.getElementById('message').value;
+        console.log('Nombre:', name);
+        console.log('Correo Electrónico:', email);
+        console.log('Teléfono:', tel);
+        console.log('Mensaje:', message);
 
-//     // console.log('Nombre:', name);
-//     // console.log('Correo Electrónico:', email);
-//     // console.log('Teléfono:', tel);
-//     // console.log('Mensaje:', message);
-
-
-//     // validar telefono solo num
-//     //VAlidar todos los inpust deben ser llenados
-//     //mensaje "gracias por tu mensaje" al dar submit
-//     let validacionDatos = ()=>{
-//         let name = document.getElementById('name').value;
-//             if(name === " "){
-//                 alert("Es necesario llenar este campo");
-//             }else {
-//                 alert("Fue exitoso")
-//             }
-//             validacionDatos();
-//         }
-//     });
-// });
-
-function validateForm() {
-    // Obtener los valores de los campos
-    document.getElementById('DOMContentLoaded').addEventListener("submit", function () {
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const tel = document.getElementById('tel').value;
-        const message = document.getElementById('message').value;
-        
-        if (!name || !email || !tel || !message) {
-            alert('Debe llenar todos los campos');
-        } else {
-            alert('Formulario enviado correctamente');
-            document.getElementById('submit').submit();
+        if (name === "" || name == null) {
+            alert("Por favor, escriba su nombre.");
+            return ;
         }
-    })
-}
+
+        if (!validateEmail(email)) {
+            alert('Por favor, ingrese un correo electrónico válido.');
+            return;
+        }
+
+        if (!validateTel(tel)) {
+            alert('Por favor, ingrese un número de teléfono válido.');
+            return;
+        } else {
+
+            document.getElementById('thankYouMessage').style.display = 'block';
+            document.getElementById('myForm').submit();
+        }
+
+    });
+
+    function validateEmail(email) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(email);
+    }
+
+    function validateTel(tel) {
+        const re = /^\d{10}$/;
+        return re.test(tel);
+    }
+
+});

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/src/styles/contact.css">
+    <link rel="stylesheet" href="/src/styles/contactForm.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,22 +20,21 @@
         <p>¿Tienes dudas o sugerencias? Déjanos tu mensaje y te responderemos</p>
         <form id="contactForm">
             <div class="form-group">
-                <input type="text" id="name" name="name" placeholder="Nombre" required>
+                <input type="text" id="name" name="name" placeholder="Nombre">
             </div>
             <div class="form-group">
-                <input type="email" id="email" name="email" placeholder="Correo Electrónico" required>
+                <input type="email" id="email" name="email" placeholder="Correo Electrónico">
             </div>
             <div class="form-group">
-                <input type="tel" id="tel" name="tel" placeholder="Teléfono" required>
+                <input type="tel" id="tel" name="tel" placeholder="Teléfono">
             </div>
             <div class="form-group">
-                <textarea name="message" id="message" placeholder="Deja tu mensaje" required></textarea>
+                <textarea name="message" id="message" placeholder="Deja tu mensaje" ></textarea>
             </div>
-            <button class="enviar" type="submit">Enviar</button>
+            <button class="enviar" id="submit" type="submit">Enviar</button>
         </form>
         <p id="thankYouMessage" style="display: none;">¡Gracias por tu mensaje!</p>
-        <script src="/src/js/contactactForm.js"></script>
+        <script src="/src/js/contactForm.js"></script>
     </div>
 </body>
-
 </html>

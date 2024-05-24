@@ -77,7 +77,7 @@ textarea:focus {
 .enviar:hover {
     background: #3CA6A6;
 }
-@media (min-width: 576px) {
+@media (min-width: 768px) {
     .formulary-container {
         max-width: 80%;
     }
