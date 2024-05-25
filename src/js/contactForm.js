@@ -7,14 +7,16 @@ document.addEventListener('DOMContentLoaded', function () {
         let tel = document.getElementById('tel').value.trim();
         let message = document.getElementById('message').value.trim()
 
-        console.log('Nombre:', name);
-        console.log('Correo Electrónico:', email);
-        console.log('Teléfono:', tel);
-        console.log('Mensaje:', message);
 
-        if (name === "" || name == null) {
-            alert("Por favor, escriba su nombre.");
-            return ;
+        // Validación si todos los campos están vacíos
+        if (!name && !email && !tel && !message) {
+            alert("Por favor, llene los campos vacíos.");
+            return;
+        }
+        //Validación de los inputs
+        if (!name) {
+            alert("Por favor, escriba su |nombre.");
+            return;
         }
 
         if (!validateEmail(email)) {
@@ -26,13 +28,16 @@ document.addEventListener('DOMContentLoaded', function () {
             alert('Por favor, ingrese un número de teléfono válido.');
             return;
         } else {
-
+            //Borrar el contenido de los inputs al dar submit
             document.getElementById('thankYouMessage').style.display = 'block';
-            document.getElementById('myForm').submit();
+            document.getElementById('name').value = '';
+            document.getElementById('email').value = '';
+            document.getElementById('tel').value = '';
+            document.getElementById('message').value = '';
         }
 
     });
-
+    //Funciones para validar el email y el telefono usando regex
     function validateEmail(email) {
         const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return re.test(email);
