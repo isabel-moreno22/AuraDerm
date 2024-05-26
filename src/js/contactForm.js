@@ -1,42 +1,121 @@
 document.addEventListener('DOMContentLoaded', function () {
+    emailjs.init('Py338k6Rs4gOeL98i');
+
     document.getElementById('contactForm').addEventListener('submit', function (event) {
         event.preventDefault();
 
         let name = document.getElementById('name').value.trim();
         let email = document.getElementById('email').value.trim();
         let tel = document.getElementById('tel').value.trim();
-        let message = document.getElementById('message').value.trim()
+        let message = document.getElementById('message').value.trim();
 
 
         // Validación si todos los campos están vacíos
         if (!name && !email && !tel && !message) {
-            alert("Por favor, llene los campos vacíos.");
+            Swal.fire({
+                icon: 'error',
+                title: 'Campos Vacíos',
+                text: 'Por favor llene los campos vacíos',
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 1500,
+            });
             return;
         }
         //Validación de los inputs
         if (!name) {
-            alert("Por favor, escriba su |nombre.");
+            Swal.fire({
+                icon: 'error',
+                title: 'Nombre Vacío',
+                text: 'Por favor escriba su nombre',
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 1500,
+            });
             return;
         }
 
         if (!validateEmail(email)) {
-            alert('Por favor, ingrese un correo electrónico válido.');
+            Swal.fire({
+                icon: 'error',
+                title: 'Email Inválido',
+                text: 'Por favor ingrese un correo electrónico válido',
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 1500,
+            });
             return;
         }
 
         if (!validateTel(tel)) {
-            alert('Por favor, ingrese un número de teléfono válido.');
+            Swal.fire({
+                icon: 'error',
+                title: 'Teléfono Inválido',
+                text: 'Por favor ingrese un número de teléfono válido',
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 1500,
+            });
             return;
-        } else {
-            //Borrar el contenido de los inputs al dar submit
-            document.getElementById('thankYouMessage').style.display = 'block';
-            document.getElementById('name').value = '';
-            document.getElementById('email').value = '';
-            document.getElementById('tel').value = '';
-            document.getElementById('message').value = '';
+        }
+        if (!message) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Mensaje Vacío',
+                text: 'Por favor escriba su mensaje',
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 1500,
+            });
+            return;
         }
 
+             // Enviar el correo electrónico con EmailJS
+        let templateParams = {
+            from_name: name,
+            from_email: email,
+            phone: tel,
+            message: message
+        };
+
+        emailjs.send('service_29qej1y', 'template_igdkipv', templateParams)
+            .then(function(response) {
+                document.getElementById('thankYouMessage').style.display = 'block';
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Enviado',
+                    text: 'Tu mensaje ha sido enviado con éxito',
+                    toast: true,
+                    position: 'top-end',
+                    showConfirmButton: false,
+                    timer: 1500,
+                });
+
+                //Borrar el contenido de los inputs al dar submit
+                document.getElementById('name').value = '';
+                document.getElementById('email').value = '';
+                document.getElementById('tel').value = '';
+                document.getElementById('message').value = '';
+
+            }, function(error) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: 'Hubo un problema al enviar tu mensaje, por favor intenta nuevamente',
+                    toast: true,
+                    position: 'top-end',
+                    showConfirmButton: false,
+                    timer: 1500,
+                });
+            });
+
     });
+
     //Funciones para validar el email y el telefono usando regex
     function validateEmail(email) {
         const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -47,5 +126,4 @@ document.addEventListener('DOMContentLoaded', function () {
         const re = /^\d{10}$/;
         return re.test(tel);
     }
-
 });
