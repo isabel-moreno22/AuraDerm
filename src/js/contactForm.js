@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
-             // Enviar el correo electrónico con EmailJS
+        // Enviar el correo electrónico con EmailJS
         let templateParams = {
             from_name: name,
             from_email: email,
@@ -84,12 +84,12 @@ document.addEventListener('DOMContentLoaded', function () {
         };
 
         emailjs.send('service_29qej1y', 'template_igdkipv', templateParams)
-            .then(function(response) {
+            .then(function (response) {
                 document.getElementById('thankYouMessage').style.display = 'block';
                 Swal.fire({
                     icon: 'success',
                     title: 'Enviado',
-                    text: 'Tu mensaje ha sido enviado con éxito',
+                    text: 'Su mensaje ha sido enviado exitosamente',
                     toast: true,
                     position: 'top-end',
                     showConfirmButton: false,
@@ -102,11 +102,12 @@ document.addEventListener('DOMContentLoaded', function () {
                 document.getElementById('tel').value = '';
                 document.getElementById('message').value = '';
 
-            }, function(error) {
+                //Alerta error al enviar el formulario
+            }, function (error) {
                 Swal.fire({
                     icon: 'error',
                     title: 'Error',
-                    text: 'Hubo un problema al enviar tu mensaje, por favor intenta nuevamente',
+                    text: 'Hubo un problema al enviar el mensaje, por favor intente nuevamente',
                     toast: true,
                     position: 'top-end',
                     showConfirmButton: false,
