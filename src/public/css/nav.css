@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Lato", sans-serif;
 }
 
 :root {
@@ -15,43 +14,233 @@
     --negro: #000000;
 }
 
+.shopping-text{
+    background-color: var(--primary-color);
+    text-align: center;
+    color: var(--blanco);
+    font-size: 12px;
+    padding: 4px;
+}
 
 .nav{
+    background-color: var(--icon-color);
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0,1);
+}
+
+nav ul{
     width: 100%;
-    padding: 10px 30px;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+nav li{
+    height: 50px;
+
+}
+
+nav a{
+    height: 100%;
+    padding: 0 30px;
+    text-decoration: none;
     display: flex;
     align-items: center;
-    justify-content:space-between;
-    background-color: var(--icon-color);
-    position: relative;
-    height: 70px;
+    color: white;
 }
 
-.logo img{
-    width: 60px;
-    height: auto;
+nav a:hover{
+    background-color:var(--primary-color) ;
+    font-size: 18px;
 }
 
-.nav ul{
+nav li:first-child{
+    margin-right: auto;
+}
+
+nav li img{
+    width: 36px;
+    height: 36px;
+}
+
+.sidebar{
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    z-index: 999;
+    background-color: rgba(1, 46, 64, 0.8);
+    backdrop-filter: blur(10px);
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0,1);
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.sidebar li{
+    width: 100% ;
+}
+
+.sidebar a{
     width: 100%;
+}
+
+.menu-button{
+    display: none;
+}
+
+.content-search-cart-login{
+    display: grid;
+    grid-template-columns: 60% 40%;
+}
+
+.search{
+    width: 100%;
+    height: 30px;
     display: flex;
-    justify-content: end;
-    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary-color);
+    padding: 20px;
 }
 
-.nav ul li{
-    list-style-type: none;
-    color: #ffffff;
+.search input{
+    display: flex;
+    width: 180px;
+    padding: 5px;
+    margin-right: 20px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    display: none;
 }
 
-.nav ul li a{
-    text-decoration: none;
+.content-search-cart-login{
+    display: grid;
+    grid-template-columns: 80% 20%;
+    background-color: var(--primary-color);
+}
+
+.search{
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content:end;
+    text-align: end;
+    align-items: center;
+    padding: 20px 10px;
+}
+
+.search input{
+    display: flex;
+    width: 98%;
+    padding: 5px;
+    margin-right: 0px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+}
+
+.content-icon-search{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 20%;
+    border-radius: 60%;
+    background-color: var(--text-color);
+}
+
+.cart-login{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    padding: 0px ;
+}
+
+.elemento-carro {
+    width: 18px;
+    height: 18px;
+    fill: white;
+    margin-right: 10px;
+    transition: transform 0.3s ease;
     
 }
 
-.menu-icon svg{ 
-    width: 40px;
-    height: 40px;
+.elemento-carro:hover{
+    transform: scale(1.4);
+    fill: black
+    
+}
+
+.elemento-icon-iniciar{
+    width: 18px;
+    height: 18px;
     fill: white;
-    display: none;
+    transition: transform 0.3s ease;
+}
+
+.elemento-icon-iniciar:hover{
+    transform: scale(1.4);
+    fill: black
+}
+
+.elementos-texto-iniciar{
+    text-decoration: none;
+    color: white;
+    margin-right: 30px;
+    margin-left: 2px;
+    transition: transform 0.3s ease;
+}
+
+.elementos-texto-iniciar:hover{
+    color: black
+}
+
+@media(max-width: 768px){
+    .hideOnmobile{
+       display: none; 
+    }
+    .menu-button{
+        display: block;
+    }
+
+    .search input{
+        width: 90%;
+    }
+
+    .content-search-cart-login{
+        grid-template-columns: 70% 30%;
+    }
+
+    .content-icon-search{
+        right: 30%;
+    }
+   
+}
+
+@media(max-width: 400px){
+    .sidebar{
+        width: 100%;
+    }
+    .menu-button{
+        display: block;
+    }
+
+    .search input{
+        width: 90%;
+    }
+
+    .content-search-cart-login{
+        grid-template-columns: 60% 40%;
+    }
+
+    .content-icon-search{
+        right: 40%;
+    }
 }
