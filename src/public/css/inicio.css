@@ -1,0 +1,28 @@
+#slider-area {
+	position: absolute;
+	height: 100vh; 
+	width: 100%;
+	top: 0;
+	left: 0;
+	z-index: -30;
+}
+
+/* Capa superpuesta para el carrusel */
+#slider-area::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%; 
+}
+
+/* Estilos para cada diapositiva del carrusel */
+#slider-area .owl-item div {
+	height: 100vh;
+	width: 100%; 
+	background-repeat: no-repeat;
+	-webkit-background-size: cover;
+	background-size: cover;
+	background-position: center center;
+}
