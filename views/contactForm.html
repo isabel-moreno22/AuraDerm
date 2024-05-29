@@ -4,10 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/src/public/css/contactForm.css">
+    <link href="../src/public/css/nav.css" rel="stylesheet">
+    <link href="../src/public/css/footer.css" rel="stylesheet">
+    <link rel="stylesheet" href="../src/public/css/contactForm.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link
         href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
@@ -15,6 +18,7 @@
     </head>
     
     <body>
+        <header></header>
         <div class="formulary-container">
             <h2>Contáctanos</h2>
             <p>¿Tienes dudas o sugerencias? Déjanos tu mensaje y te responderemos</p>
@@ -34,9 +38,12 @@
                 <button class="enviar" id="submit" type="submit">Enviar</button>
             </form>
             <p id="thankYouMessage" style="display: none;">¡Gracias por tu mensaje!</p>
-            <script src="/src/js/contactForm.js"></script>
+            <script src="../src/js/contactForm.js"></script>
             <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-            <script src="/src/js/sweetalert2.js"></script>
+            <script src="../src/js/sweetalert2.js"></script>
         </div>
+
+        <footer></footer>
+        <script src="../src/js/funcionalidad.js"></script>
     </body>
     </html>

@@ -1,17 +1,28 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+    html,body{
+        margin: 0;
+        padding: 0;
+        box-sizing: content-box;
+    }
 
-body {
+    header {
+        border: solid 2px red;
+    }
+
+    /* * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    } */
+
+/* body {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     background-color: #f0f0f0;
     font-family: "Lato", sans-serif;
-}
+} */
 
 .formulary-container {
     background-color: rgba(242, 227, 213, 0.5);
