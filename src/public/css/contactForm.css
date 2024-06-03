@@ -1,60 +1,25 @@
-    html,body{
-        margin: 0;
-        padding: 0;
-        box-sizing: content-box;
-    }
-
-    header {
-        border: solid 2px red;
-    }
-
-    /* * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-    } */
-
-/* body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: #f0f0f0;
-    font-family: "Lato", sans-serif;
-} */
 
 .formulary-container {
     background-color: rgba(242, 227, 213, 0.5);
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
     border-radius: 10px;
     max-width: 95%;
     padding: 20px;
-    margin: 20px auto; 
+    margin: 20px auto;
+    height: 57vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-h2, p {
+#contact-form-h2,
+#contact-form-p {
     text-align: center;
-    margin: 10px 0;
-    font-size: 22px; 
+    margin: 20px 0;
+    font-size: 22px;
 }
 
-input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px; 
-    background-color: rgba(200, 190, 180, 0.2);
-}
-
-input:focus {
-    outline: none;
-}
-
-
-textarea {
+.contact-form-input, textarea {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
@@ -62,19 +27,24 @@ textarea {
     border-radius: 5px;
     font-size: 16px;
     background-color: rgba(200, 190, 180, 0.2);
-    resize: none;
-    font-family: "Lato", sans-serif;
 }
 
-textarea:focus {
+.contact-form-input:focus, textarea:focus {
     outline: none;
 }
 
+
+textarea {
+    resize: none;
+    height: 15vh;
+}
+
+
 .enviar {
-    font-size: 16px; 
+    font-size: 16px;
     font-weight: bold;
     display: block;
-    background-color: #026773;
+    background-color: var(--secondary-color);
     color: white;
     padding: 12px 24px;
     border: none;
@@ -93,22 +63,23 @@ textarea:focus {
 }
 
 .enviar:hover {
-    background: #3CA6A6;
+    background: var(--text-color);
 }
+
 @media (min-width: 768px) {
     .formulary-container {
         max-width: 80%;
     }
 }
+
 @media (min-width: 1200px) {
     .formulary-container {
         max-width: 50%;
     }
 }
 
-@media (min-width: 1024px){
+@media (min-width: 1024px) {
     .formulary-container {
         max-width: 60%;
     }
 }
-
