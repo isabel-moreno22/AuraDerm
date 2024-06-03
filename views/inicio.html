@@ -4,45 +4,80 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio</title>
-</head>
-<body>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css" rel="stylesheet">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css" rel="stylesheet">
 <link href="../src/public/css/inicio.css" rel="stylesheet">
 <link href="../src/public/css/nav.css" rel="stylesheet">
 <link href="../src/public/css/footer.css" rel="stylesheet">
 </head>
 <body>
     <header></header>
-<div id="wrapper">
-<!-- Carrusel de imágenes -->
-<div class="owl-carousel" id="slider-area">
-<div style="background-image: url(../src/public/img/1.jpg)"></div>
-<div style="background-image: url(../src/public/img/2.jpg)"></div>
-<div style="background-image: url(../src/public/img/3.jpg)"></div>
+    <style>
+        .carousel {
+            position: relative;
+            overflow: hidden;
+            max-width: 1920px;
+            min-width: 480px;
+            margin: auto;
+            height: 600px;
+        }
+        .slide {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .active {
+            opacity: 1;
+        }
+    </style>
+    <div class="carousel">
+        <img src="../src/public/img/banners_Mesa de trabajo 1.jpg" class="slide active">
+        <img src="../src/public/img/banners-02.jpg" class="slide">
+        <img src="../src/public/img/banners-03.jpg" class="slide">
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const slides = document.querySelectorAll('.slide');
+            let currentIndex = 0;
+
+            function cycleSlides() {
+                slides[currentIndex].classList.remove('active');
+                currentIndex = (currentIndex + 1) % slides.length;
+                slides[currentIndex].classList.add('active');
+            }
+
+            setInterval(cycleSlides, 3000);
+        });
+    </script>
+
+<div class="title-container">
+    <h1>Nuestras marcas</h1></div>
+<div class="carousel-container">
+    <div class="carousel-arrow left-arrow">&#10094;</div>
+    <div class="carousel">
+        <div class="carousel-track">
+            <img src="../src/public/img/marca1.png" alt="Logo 1" class="carousel-logo">
+            <img src="../src/public/img/marca2.png" alt="Logo 2" class="carousel-logo">
+            <img src="../src/public/img/marca3.png" alt="Logo 3" class="carousel-logo">
+            <img src="../src/public/img/marca4.png" alt="Logo 4" class="carousel-logo">
+            <img src="../src/public/img/marca5.png" alt="Logo 5" class="carousel-logo">
+            <img src="../src/public/img/marca6.png" alt="Logo 5" class="carousel-logo">
+            <img src="../src/public/img/marca7.webp" alt="Logo 4" class="carousel-logo">
+            <img src="../src/public/img/marca8.avif" alt="Logo 5" class="carousel-logo">
+            <img src="../src/public/img/marca9.webp" alt="Logo 5" class="carousel-logo">
+        </div>
+    </div>
+    <div class="carousel-arrow right-arrow">&#10095;</div>
 </div>
-<!-- Sección de navegación -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-<script>
-    $('#slider-area').owlCarousel({
-       loop: true,
-       autoplay: true,
-       responsive: {
-           0: {
-               items: 1 
-           },
-           600: {
-               items: 1
-           },
-           1000: {
-               items: 1 
-           }
-       }
-    })        
-</script>
+
+<div class="banner-container">
+    <img class="banner" src="../src/public/img/image.png">
+</div>
 
     <footer></footer>
         <script src="../src/js/funcionalidad.js"></script>
+        <script src="../src/js/inicio.js"></script>
     </body>
 </html>
