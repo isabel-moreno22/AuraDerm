@@ -10,6 +10,7 @@
     width: 100%;
     overflow: hidden;
 	height: auto;
+    justify-content: space-around;
 }
 
 .carousel-arrow {
@@ -73,10 +74,18 @@
     .slide {
         height: 50vh;
     }
+
+    .banner-container{
+        margin-top: 150px;
+    }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 490px) {
     .slide {
         height: 30vh;
+    }
+
+    .carousel-logo{
+    justify-content: space-around;
     }
 }
