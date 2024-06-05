@@ -1,7 +1,7 @@
 // -------- hamburguer menu-------
-function showSidebear(){
-    const sidebar = document.querySelector('.sidebar')
-    sidebar.style.display = 'flex'
+function showSidebar() {
+    const sidebar = document.querySelector('.sidebar');
+    sidebar.classList.toggle('active');
 }
 
 function hideSidebar(){

@@ -94,6 +94,10 @@ nav li img{
     width: 100%;
 }
 
+.sidebar.active {
+    display: flex; 
+}
+
 .menu-button{
     display: none;
 }
