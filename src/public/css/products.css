@@ -58,16 +58,20 @@
     margin: 0;
     margin-bottom: 10px;
     flex-grow: 1;
-    font-weight: bold;
+    font-weight: 100;
+    text-align: justify;
+    padding: 0 5%;
 }
 
 .product button {
     background-color: #026773;
     color: #fff;
     border: none;
-    padding: 5px 20px;
+    padding: 10px 20px;
     border-radius: 10px;
     cursor: pointer;
+    font-size: 16px;
+    margin-top: 5px;
 }
 
 button:hover {
