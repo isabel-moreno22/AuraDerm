@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  fetch("/AuraDerm/productos.json")
+  fetch("/src/json/productos.json")
     .then((response) => response.json())
     .then((data) => {
       const productContainer = document.getElementById("productContainer");
