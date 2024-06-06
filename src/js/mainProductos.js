@@ -37,8 +37,8 @@ function addProduct(container, id, name, imgSrc, description, price) {
   const productDescription = document.createElement("p");
   productDescription.textContent = description;
 
-  const productPrice = document.createElement("p");
-  productPrice.textContent = `Precio: $${price}`;
+  const productPrice = document.createElement("h4");
+  productPrice.textContent = `$${price}`;
 
   const addToCartButton = document.createElement("button");
   addToCartButton.textContent = "Agregar al carrito";
