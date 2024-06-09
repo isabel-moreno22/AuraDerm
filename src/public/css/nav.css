@@ -181,6 +181,7 @@ nav li img {
     height: 18px;
     fill: white;
     margin-right: 10px;
+    cursor: pointer;
     transition: transform 0.3s ease;
 
 }
