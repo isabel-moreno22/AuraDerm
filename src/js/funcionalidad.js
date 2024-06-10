@@ -1,8 +1,10 @@
+import { renderCart, showCart, updateSubtotal, cartActions } from "./cart.js";
+
 document.addEventListener("DOMContentLoaded", function () {
   const header = document.querySelector("header");
   const footer = document.querySelector("footer");
 
-  //función para el menú desplegable
+  // Función para el menú desplegable
   function initMobileMenu() {
     const sidebar = document.querySelector(".sidebar");
     const menuButton = document.querySelector(".menu-button");
@@ -34,6 +36,9 @@ document.addEventListener("DOMContentLoaded", function () {
     .then((data) => {
       document.body.insertAdjacentHTML("beforeend", data);
       showCart();
+      renderCart();
+      updateSubtotal();
+      cartActions();
     })
     .catch((error) => console.error("Error al cargar cart.html:", error));
 
@@ -43,9 +48,4 @@ document.addEventListener("DOMContentLoaded", function () {
       footer.innerHTML = data;
     })
     .catch((error) => console.error("Error al cargar footer.html:", error));
-
-    //Llamada al script de carrito
-    const carritoScript = document.createElement('script');
-    carritoScript.src = '../src/js/cart.js';
-    document.head.appendChild(carritoScript);
 });

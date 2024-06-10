@@ -169,6 +169,7 @@ nav li img {
 }
 
 .cart-login {
+    position: relative;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -183,9 +184,28 @@ nav li img {
     margin-right: 10px;
     cursor: pointer;
     transition: transform 0.3s ease;
+    position: relative; 
 
 }
+/* Contador de elementos en el carrito */
+.cart-count {
+    position: absolute;
+    top: -10px; 
+    right: -10px;
+    background-color: var(--text-color);
+    color: white;
+    border-radius: 50%;
+    padding: 3px 5px;
+    font-size: 12px;
+    line-height: 12px;
+    text-align: center;
+    display: none;
+}
 
+.cart-login .cart-count:not(.hidden) {
+    display: block;
+}
+/* fin estilos de elementos en el carrito */
 .elemento-carro:hover {
     transform: scale(1.4);
     fill: black

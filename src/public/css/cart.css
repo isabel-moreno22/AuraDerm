@@ -48,6 +48,19 @@
     overflow-x: hidden;
 }
 
+.empty-message-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+}
+
+.empty-cart-message {
+    font-size: 20px;
+    line-height: 1.5;
+}
+
 .cart-item{
 position: relative;
 padding: 5px ;
@@ -57,20 +70,18 @@ display: flex;
 border-bottom: 1px solid white;
 }
 
-.remove-item{
+.remove-item-container{
     position: absolute;
     top: 10px;
     right: 10px;
     width: 20px;
     height: 20px;
-    border-radius: 50%;
-    background-color: var(--text-color);
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
 }
-.remove-item:hover, .item-details .qty span:hover{
+.remove-item-container:hover, .item-details .qty span:hover{
     transform: scale(1.1);
 }
 

@@ -39,26 +39,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const productPrice = document.createElement("h4");
     productPrice.textContent = `$${price}`;
-
+    //Añadir los elementos al garrito
     const addToCartButton = document.createElement("button");
     addToCartButton.textContent = "Agregar al carrito";
     addToCartButton.setAttribute("data-id", id);
     addToCartButton.setAttribute("data-name", name);
     addToCartButton.setAttribute("data-img", imgSrc);
     addToCartButton.setAttribute("data-price", price);
-
-    addToCartButton.addEventListener("click", () => {
-      let cart = JSON.parse(localStorage.getItem("cart")) || [];
-      const existingItem = cart.find((item) => item.id === id);
-
-      if (existingItem) {
-        existingItem.quantity++;
-      } else {
-        cart.push({ id, name, img: imgSrc, price, quantity: 1 });
-      }
-
-      localStorage.setItem("cart", JSON.stringify(cart));
-    });
 
     productImageContainer.appendChild(productImage);
     productDetails.appendChild(productName);
