@@ -46,8 +46,8 @@ a {
   width: 100%;
 }
 
-.botones-inicar-registrarse button {
-  width: auto;
+.botones-inicar-registrarse a button {
+  width: 100%;
   height: 40px;
   border-width: 1.5px;
   border-color: var(--text-color);
@@ -58,7 +58,9 @@ a {
   transition: 0.3s ease all;
 }
 
-.botones-inicar-registrarse button:hover {
+.botones-inicar-registrarse button:hover,
+.botones-inicar-registrarse button:active,
+.botones-inicar-registrarse button:focus {
   color: var(--text-color);
   color: white;
   background-image: linear-gradient(to right, #012e40, #3ca6a6);
