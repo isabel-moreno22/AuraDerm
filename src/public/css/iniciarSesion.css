@@ -242,3 +242,9 @@ a {
     margin: 0 0 0 10px;
   }
 }
+.color-inicio {
+  background-image: linear-gradient(to right, #012e40, #3ca6a6);
+}
+.color-registro {
+  background-image: linear-gradient(to right, #012e40, #3ca6a6);
+}

@@ -6,7 +6,7 @@ body {
   max-width: 600px;
   margin: 50px auto;
   padding: 20px;
-  background: radial-gradient(circle, #5f62ff, #7d7bfe);
+  background: rgba(242, 227, 213, 0.5);
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -33,7 +33,7 @@ body {
 .btn-submit {
   width: 100%;
   padding: 10px;
-  background-color: #007bff;
+  background-color: #026773;
   border: none;
   color: #fff;
   font-size: 16px;
@@ -41,7 +41,7 @@ body {
   cursor: pointer;
 }
 .btn-submit:hover {
-  background-color: #0056b3;
+  background-color: #29adaf;
 }
 .botones-inicar-registrarse {
   display: grid;
@@ -55,9 +55,10 @@ body {
   border-width: 1.5px;
   border-color: var(--text-color);
   cursor: pointer;
+  color: white;
   font-weight: bold;
   margin-bottom: 10%;
-  background-color: transparent;
+  background-color: #026773;
   transition: 0.3s ease all;
 }
 
@@ -66,5 +67,11 @@ body {
 .botones-inicar-registrarse button:focus {
   color: var(--text-color);
   color: white;
-  background-image: linear-gradient(to right, #012e40, #3ca6a6);
+  background-color: #29adaf;
+}
+.color-registro {
+  background-color: #026773;
+}
+.color-inicio {
+  background-color: #026773;
 }
