@@ -6,24 +6,24 @@
     <title>Tu carrito</title>
     <link href="../src/public/css/nav.css" rel="stylesheet" />
     <link href="../src/public/css/footer.css" rel="stylesheet" />
-    <link rel="stylesheet" href="/src/public/css/cart.css" />
+    <link rel="stylesheet" href="../src/public/css/cart.css" />
   </head>
   <body>
     <header></header>
-    <!-- desplegable carrito -->
-    <!-- <div class="side-cart-container"> -->
 
+    <!-- Desplegable carrito -->
     <div class="sidecart">
       <div class="cart-content">
+        <!-- Cart header -->
         <div class="cart-header">
           <svg
+            id="close-cart-btn"
             xmlns="http://www.w3.org/2000/svg"
             width="26"
             height="26"
             fill="currentColor"
             class="bi bi-x-circle"
             viewBox="0 0 16 16"
-            id="close-cart-btn"
           >
             <path
               d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"
@@ -34,26 +34,26 @@
           </svg>
           <h2 class="cart-h2">Tu carrito</h2>
         </div>
-        <div class="cart-items">
-          <div class="cart-item">
-            <div class="remove-item">
-              <span>&times;</span>
-            </div>
-          </div>
+        <!-- Cart items -->
+        <div id="cart-items" class="cart-items">
+          <p id="empty-cart-message" class="empty-cart-message">
+            Carrito vacío, aún no tienes productos dentro del carrito
+          </p>
         </div>
+        <!-- Cart actions -->
         <div class="cart-actions">
           <div class="subtotal">
             <p>Subtotal:</p>
-            <p>$<span id="subtotal-price">0000</span></p>
+            <p>$<span id="subtotal-price">0.00</span></p>
           </div>
-          <button id="go-to-cart">Ver carrito</button>
           <button>Ir a pagar</button>
         </div>
       </div>
     </div>
-    <!-- </div> -->
-    <!-- fin desplegable carrito -->
+    <!-- Fin desplegable carrito -->
+
     <footer></footer>
-    <script src="../src/js/funcionalidad.js"></script>
+    <script src="../src/js/cart.js"></script>
+    <script type="module" src="/src/js/funcionalidad.js"></script>
   </body>
 </html>
