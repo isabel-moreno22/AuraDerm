@@ -1,74 +1,94 @@
-document.getElementById('registerForm').addEventListener('submit', function(event) {
-    event.preventDefault();
+document.addEventListener("DOMContentLoaded", function () {
+  document
+    .getElementById("registerForm")
+    .addEventListener("submit", function (event) {
+      event.preventDefault();
 
-    // VALORES
-    const fullName = document.getElementById('fullName').value;
-    const phone = document.getElementById('phone').value;
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
-    const confirmPassword = document.getElementById('confirmPassword').value;
+      // VALORES
+      const fullName = document.getElementById("fullName").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value.trim();
+      const confirmPassword = document
+        .getElementById("confirmPassword")
+        .value.trim();
 
-    // LIMPIAR ALERTAS PREVIAS
-    document.getElementById('alertContainer').innerHTML = '';
-
-    // VALIDACIONES
-    if (password !== confirmPassword) {
-        showAlert('Las contraseñas no coinciden', 'danger');
+      // VALIDACIONES
+      if (!fullName || !phone || !email || !password || !confirmPassword) {
+        Swal.fire({
+          icon: "error",
+          title: "Campos Vacíos",
+          text: "Por favor llene todos los campos",
+          position: "top-end",
+          showConfirmButton: false,
+          timer: 3000,
+        });
         return;
-    }
+      }
 
-    if (!validateEmail(email)) {
-        showAlert('Correo electrónico no válido', 'danger');
+      if (!validateEmail(email)) {
+        Swal.fire({
+          icon: "error",
+          title: "Email Inválido",
+          text: "Por favor ingrese un correo electrónico válido",
+          position: "top-end",
+          showConfirmButton: false,
+          timer: 3000,
+        });
         return;
-    }
+      }
 
-    if (!validatePhone(phone)) {
-        showAlert('Número de teléfono no válido', 'danger');
+      if (!password || !confirmPassword) {
+        Swal.fire({
+          icon: "error",
+          title: "Contraseñas Vacías",
+          text: "Por favor ingrese y confirme su contraseña",
+          position: "top-end",
+          showConfirmButton: false,
+          timer: 3000,
+        });
         return;
-    }
+      }
 
-    // JSON
-    const user = {
+      if (password !== confirmPassword) {
+        Swal.fire({
+          icon: "error",
+          title: "Contraseñas no coinciden",
+          text: "Las contraseñas no coinciden",
+          position: "top-end",
+          showConfirmButton: false,
+          timer: 3000,
+        });
+        return;
+      }
+
+      // JSON
+      const user = {
         fullName: fullName,
         phone: phone,
         email: email,
-        password: password
-    };
+        password: password,
+      };
 
-    // Mostrar JSON en consola
-    console.log(JSON.stringify(user));
+      // Mostrar JSON en consola
+      console.log(JSON.stringify(user));
 
-    // LIMPIAR FORM 
-    document.getElementById('registerForm').reset();
+      // LIMPIAR FORMULARIO
+      document.getElementById("registerForm").reset();
 
-    showAlert('Usuario registrado con éxito', 'success');
-});
+      // USUARIO REGISTRADO CON EXITO
+      Swal.fire({
+        icon: "success",
+        title: "¡Usuario registrado!",
+        text: "Usuario registrado con éxito",
+        position: "top-end",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+    });
 
-function showAlert(message, type) {
-    const alertContainer = document.getElementById('alertContainer');
-    const alert = document.createElement('div');
-    alert.className = `alert alert-${type} alert-dismissible fade show`;
-    alert.role = 'alert';
-    alert.innerHTML = `
-        ${message}
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
-    `;
-    alertContainer.appendChild(alert);
-
-    setTimeout(() => {
-        alert.classList.remove('show');
-        alert.addEventListener('transitionend', () => alert.remove());
-    }, 3000);
-}
-
-function validateEmail(email) {
+  function validateEmail(email) {
     const re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
     return re.test(email);
-}
-
-function validatePhone(phone) {
-    const re = /^[0-9]{10}$/;
-    return re.test(phone);
-}
+  }
+});
