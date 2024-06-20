@@ -63,6 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
         return;
       }
+      
       if (!message) {
         Swal.fire({
           icon: "error",
