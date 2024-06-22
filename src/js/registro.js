@@ -1,10 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
-  document
-    .getElementById("registerForm")
-    .addEventListener("submit", function (event) {
+  const registerForm = document.getElementById("registerForm");
+
+  if (registerForm) {
+    registerForm.addEventListener("submit", function (event) {
       event.preventDefault();
 
-      // VALORES
       const fullName = document.getElementById("fullName").value.trim();
       const phone = document.getElementById("phone").value.trim();
       const email = document.getElementById("email").value.trim();
@@ -13,7 +13,6 @@ document.addEventListener("DOMContentLoaded", function () {
         .getElementById("confirmPassword")
         .value.trim();
 
-      // VALIDACIONES
       if (!fullName || !phone || !email || !password || !confirmPassword) {
         Swal.fire({
           icon: "error",
@@ -62,21 +61,16 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
       }
 
-      // JSON
-      const user = {
-        fullName: fullName,
-        phone: phone,
-        email: email,
-        password: password,
+      const userData = {
+        fullName,
+        phone,
+        email,
+        password,
       };
 
-      // Mostrar JSON en consola
-      console.log(JSON.stringify(user));
+      console.log("User Data to be stored:", userData);
+      localStorage.setItem("userData", JSON.stringify(userData));
 
-      // LIMPIAR FORMULARIO
-      document.getElementById("registerForm").reset();
-
-      // USUARIO REGISTRADO CON EXITO
       Swal.fire({
         icon: "success",
         title: "¡Usuario registrado!",
@@ -84,11 +78,61 @@ document.addEventListener("DOMContentLoaded", function () {
         position: "top-end",
         showConfirmButton: false,
         timer: 1500,
+      }).then(() => {
+        window.location.href = "/views/iniciarSesion.html";
       });
     });
+  }
 
   function validateEmail(email) {
     const re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
     return re.test(email);
+  }
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const loginForm = document.getElementById("loginForm");
+
+  if (loginForm) {
+    loginForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const loginEmail = document.getElementById("loginEmail").value.trim();
+      const loginPassword = document
+        .getElementById("loginPassword")
+        .value.trim();
+
+      console.log("Login Email:", loginEmail);
+      console.log("Login Password:", loginPassword);
+
+      const storedUserData = JSON.parse(localStorage.getItem("userData"));
+      console.log("Stored User Data:", storedUserData);
+
+      if (
+        storedUserData &&
+        storedUserData.email === loginEmail &&
+        storedUserData.password === loginPassword
+      ) {
+        Swal.fire({
+          icon: "success",
+          title: "Inicio de sesión exitoso",
+          text: "Bienvenido de nuevo",
+          position: "top-end",
+          showConfirmButton: false,
+          timer: 1500,
+        }).then(() => {
+          window.location.href = "/views/inicio.html";
+        });
+      } else {
+        Swal.fire({
+          icon: "error",
+          title: "Error de autenticación",
+          text: "Email o contraseña incorrectos",
+          position: "top-end",
+          showConfirmButton: false,
+          timer: 3000,
+        });
+      }
+    });
   }
 });
