@@ -46,11 +46,11 @@ h2{
   display: grid;
   grid-template-columns: 50% 50%;
   width: 100%;
-  gap: 4px;
+  gap: 2px;
 }
 
 .botones-inicar-registrarse a button {
-  width: 100%;
+  width: 98%;
   height: 40px;
   border-width: 1.5px;
   cursor: pointer;
@@ -60,7 +60,7 @@ h2{
   border-radius: 5px;
 }
 
-#buton-inicar1 {
+#buton-iniciar1 {
   border: 1px solid var(--secondary-color);
   background-color: transparent ;
 }
