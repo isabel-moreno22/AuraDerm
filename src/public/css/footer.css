@@ -79,6 +79,7 @@ h5 {
 .whatsapp svg,
 .correo svg {
   margin-right: 10px;
+  cursor: pointer;
 }
 
 .content-section3 {
@@ -152,6 +153,7 @@ h5 {
 .correo {
   font-size: 10px;
   font-weight: lighter;
+  cursor: pointer;
 }
 
 @media (min-width: 768px) {

@@ -1,7 +1,4 @@
-body {
-  background-color: #ffffff;
-  font-family: Arial, sans-serif;
-}
+
 .dividir {
   padding: 25% 0;
   width: 100%;
@@ -12,16 +9,16 @@ body {
 }
 
 .form-container {
-  /* max-width: 600px; */
   width: 100%;
   height: 100%;
   margin: 0px auto;
   padding: 20px;
-  background: rgba(242, 227, 213, 0.5);
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+h2{
+  text-align: center;
+  margin-bottom: 20px;
+}
 .form-header {
   text-align: center;
   margin-bottom: 20px;
@@ -30,17 +27,54 @@ body {
   margin-bottom: 15px;
 }
 .form-group label {
-  display: block;
   margin-bottom: 5px;
+  font-weight: 600;
+  color: var(--icon-color);
 }
 .form-group input {
   width: 100%;
   padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  border: 1px solid var(--primary-color);
+  border-radius: 5px;
+  margin-top: 10px;
 }
 .form-group input:focus {
-  border-color: #007bff;
+  outline: none;
+}
+
+.botones-inicar-registrarse {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  width: 100%;
+  gap: 4px;
+}
+
+.botones-inicar-registrarse a button {
+  width: 100%;
+  height: 40px;
+  border-width: 1.5px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-bottom: 10%;
+  transition: 0.3s ease all;
+  border-radius: 5px;
+}
+
+#buton-inicar1 {
+  border: 1px solid var(--secondary-color);
+  background-color: transparent ;
+}
+
+#buton-registrarse1{
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+#buton-registrarse1:hover,
+.botones-inicar-registrarse button:active,
+.botones-inicar-registrarse button:focus {
+  color: white;
+  background-color: var(--text-color);
 }
 
 .boton {
@@ -51,74 +85,25 @@ body {
 .btn-submit {
   width: 70%;
   padding: 10px;
-  background-color: #026773;
+  background-color: var( --secondary-color);
   border: none;
-  color: #fff;
+  color: white;
   font-size: 16px;
   border-radius: 20px;
   cursor: pointer;
 }
 .btn-submit:hover {
-  background-color: #29adaf;
-}
-.botones-inicar-registrarse {
-  display: grid;
-  grid-template-columns: 50% 50%;
-  width: 100%;
-}
-
-.botones-inicar-registrarse a button {
-  width: 100%;
-  height: 40px;
-  border-width: 1.5px;
-  border-color: var(--text-color);
-  cursor: pointer;
-  color: white;
-  font-weight: bold;
-  margin-bottom: 10%;
-  background-color: #026773;
-  transition: 0.3s ease all;
-  border-radius: 5px;
-}
-
-#buton-inicar1 {
-  border: 1px solid #026773;
-  border-bottom: 5px solid #012e40;
-  background-color: transparent;
-  color: #012e40;
-}
-
-.botones-inicar-registrarse button:hover,
-.botones-inicar-registrarse button:active,
-.botones-inicar-registrarse button:focus {
-  color: var(--text-color);
-  color: white;
-  background-color: #29adaf;
-}
-.color-registro {
-  background-color: #026773;
-}
-.color-inicio {
-  background-color: #026773;
-}
-.titulo-ingresar {
-  font-size: 14px;
-  font-weight: bolder;
-  margin-bottom: 5%;
+  background-color: var(--text-color)
 }
 
 @media (min-width: 768px) {
   .dividir {
     padding: 15% 20%;
-    width: 100%;
-    height: 100%;
   }
 }
 @media (min-width: 1000px) {
   .dividir {
     padding: 0% 0%;
-    width: 100%;
-    height: 100%;
     display: grid;
     grid-template-columns: 50% 50%;
   }
@@ -127,37 +112,20 @@ body {
     padding: 10% 15%;
   }
 
-  .logo {
-    display: block;
-  }
-
-  .form-container {
-    /* max-width: 600px; */
-    width: 100%;
-    height: 60%;
-    margin: 0px auto;
-    padding: 20px;
-    background: rgba(242, 227, 213, 0.5);
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-
   .form-group input {
     padding: 5px;
     font-size: 14px;
   }
 
-  .form-group label {
-    margin-bottom: 1px;
-  }
-
   .logo {
+    display: block;
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #012e40;
+    background-color: var(--icon-color);
+
   }
 
   .logo img {
@@ -165,6 +133,7 @@ body {
     height: 250px;
   }
 }
+
 @media (min-width: 1024px) {
   .dividir {
     height: 100vh;
