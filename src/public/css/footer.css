@@ -255,7 +255,6 @@ h5 {
   }
 
   .pie-pagina {
-    padding: 10px;
     font-size: 14px;
   }
 
@@ -272,6 +271,33 @@ h5 {
   .whatsapp,
   .correo {
     font-size: 10px;
+    font-weight: lighter;
+  }
+}
+
+@media (min-width: 1400px) {
+
+  .content-section2 h5 {
+    font-size: 12px;
+  }
+
+  .pie-pagina {
+    font-size: 16px;
+  }
+
+  /* --------tamañlo de la letra------- */
+  .content-section1 h3,
+  .content-section2 h3,
+  .content-section4 h3 {
+    font-size: 14px;
+    font-weight: lighter;
+  }
+
+  .content-section1 h5,
+  .contactenos,
+  .whatsapp,
+  .correo {
+    font-size: 12px;
     font-weight: lighter;
   }
 }
