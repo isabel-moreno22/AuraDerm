@@ -1,31 +1,178 @@
-/* body {
-    padding: 40px;
-} */
+/* BARRA DE FILTROS */
+/* FILTROS MOBILE */
 
+.mobile-filters-sidebar-btn{
+  display: flex;
+  flex-direction: row ;
+}
+
+.mobile-filters-sidebar-btn h2{
+  margin-top: 12px;
+  color: var(--icon-color);
+  font-size: 18px;
+  text-align: center;
+}
+.mobile-filters-sidebar-btn svg{
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  transition: .8s;
+  fill: var(--icon-color);
+  margin: 10px;
+}
+
+.filters-sidebar{
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 90%;
+  background-color: rgba(1, 46, 64, 0.8);
+  backdrop-filter: blur(10px);
+  box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+  color: white;
+}
+
+.filters-sidebar.visible {
+  display: block;
+}
+
+.filters-sidebar-header{
+  display: flex;
+  justify-content: space-between;
+  margin: 15px 20px;
+}
+
+.filters-sidebar-header h2{
+  font-weight: 400;
+}
+#close-filters-btn {
+  cursor: pointer;
+  margin-bottom: 5px;
+  transition: transform 0.2s ease;
+  right: 0;
+}
+
+#close-filters-btn:hover {
+  transform: scale(1.1);
+}
+
+.filters{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 15px
+}
+
+.filters h3{
+  font-weight: 600;
+  font-size: 18px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  border-bottom: 1px solid white;
+}
+
+.filters input[type="checkbox"] {
+  appearance: none; 
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 1px solid white; 
+  border-radius: 50%; 
+  margin-right: 8px; 
+  cursor: pointer; 
+}
+
+.filters input[type="checkbox"]:checked {
+  background-color: var(--text-color);
+  border-color: var(--text-color);
+}
+
+.filters label {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer; 
+}
+
+
+.price-filter{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.filters input[type="number"] {
+  appearance: textfield;
+  -webkit-appearance: none;
+  -moz-appearance: textfield; 
+  width: 80px; 
+  padding: 6px;
+  font-size: 16px;
+  border: 1px solid white; 
+  border-radius: 3px; 
+  margin-right: 20px;
+}
+
+.filters input[type="number"]::-webkit-inner-spin-button,
+.filters input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0; 
+}
+
+.filters input[type="number"]:focus {
+  outline: none; 
+  border-color: var(--secondary-color); 
+  box-shadow: 0 0 5px rgba(0, 128, 148, 0.5);
+}
+
+.filter-buttons{
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+  gap: 20px;
+}
+.filter-buttons button{
+  border: none;
+  border-radius: 20px;
+  padding: 10px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  color: white;
+  background-color: var(--text-color);
+}
+
+.filter-buttons button:hover {
+  opacity: 0.8;
+}
+
+#desktop-filters {
+  display: none;
+}
 /* CONTENEDOR DE PRODUCTOS */
 #productContainer {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(300px, 1fr));
-  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 3% 7%;
 }
 
 .product {
   background-color: #f8f0e9;
-  display: flex;
-  flex-direction: column;
   border: 1px solid #ccc;
   border-radius: 8px;
   overflow: hidden;
   margin-bottom: 20px;
-  align-items: center;
   max-width: 350px;
-  max-height: 500px;
 }
 
 .product-image {
   width: 100%;
-  height: 100%;
+  height: 200px; 
   overflow: hidden;
   border-radius: 8px;
 }
@@ -39,7 +186,6 @@
 .product-details {
   margin: 0;
   padding: 10px;
-  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -47,9 +193,7 @@
 }
 
 .product h2 {
-  margin: 0;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin: 10px 0;
   font-size: 1.2rem;
   font-weight: bold;
   text-align: center;
@@ -58,15 +202,13 @@
 .product p {
   margin: 0;
   margin-bottom: 10px;
-  flex-grow: 1;
   font-weight: 100;
   text-align: justify;
-  padding: 0 5%;
 }
 
 .product button {
-  background-color: #026773;
-  color: #fff;
+  background-color: var(--secondary-color);
+  color: white;
   border: none;
   padding: 10px 20px;
   border-radius: 10px;
@@ -76,37 +218,93 @@
 }
 
 button:hover {
-  background-color: #00b0c4;
+  opacity: 0.8;
 }
 
-/* CARD RESPONSIVE */
-@media screen and (max-width: 768px) {
-  .product {
-    flex-direction: column;
+
+@media (min-width: 768px) {
+  .filters-sidebar{
+    width: 75%;
   }
 
-  .product-image {
-    height: 200px;
-  }
-}
-
-/* TABLETS */
-@media screen and (max-width: 1024px) {
   #productContainer {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* CELULARES */
-@media screen and (max-width: 768px) {
-  #productContainer {
-    display: block;
-    justify-content: center;
-    align-items: center;
+    gap: 10px;
   }
 
   .product {
-    max-width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: none;
+    max-height: 500px;
+  }
+
+  .product-image {
+    height: 100%; 
+  }
+}
+
+@media (min-width: 1024px) {
+  .main-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  #mobile-filters {
+    display: none;
+  }
+  
+  .filters h3{
+    color: var(--icon-color);
+    border-bottom: none;
+  }
+
+  .filters input[type="checkbox"] {
+    border: 1px solid var(--primary-color); 
+  }
+  
+  .filters input[type="checkbox"]:checked {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+  }
+
+  .filters input[type="number"] {
+    border: 1px solid var(--primary-color); 
+    border-radius: 3px; 
+    margin-right: 20px;
+  }
+
+  .filter-buttons button{
+    background-color: var(--secondary-color);
+  }
+
+  #desktop-filters {
+    display: block;
+
+  }
+
+  #desktop-filters h2{
+    margin: 15px;
+    color: var(--icon-color);
+  }
+
+  #productContainer {
+    width: 75%;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(250px, 1fr));
+    padding: 20px;
+  }
+}
+
+@media (min-width: 1200px){
+  #productContainer {
+    grid-template-columns: repeat(3, minmax(200px, 1fr));
+  }
+
+  .product-image {
+    height: 400px; 
   }
 }
