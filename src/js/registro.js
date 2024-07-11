@@ -37,6 +37,30 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
       }
 
+      if (!validateFullName(fullName)) {
+        Swal.fire({
+          icon: "error",
+          title: "Nombre Inválido",
+          text: "Por favor ingrese un Nombre válido",
+          position: "top-end",
+          showConfirmButton: false,
+          timer: 3000,
+        });
+        return;
+      }
+
+      if (!validatePhone(phone)) {
+        Swal.fire({
+          icon: "error",
+          title: "Número de Teléfono Inválido",
+          text: "Por favor ingrese un Número de Teléfono válido",
+          position: "top-end",
+          showConfirmButton: false,
+          timer: 3000,
+        });
+        return;
+      }
+
       if (!password || !confirmPassword) {
         Swal.fire({
           icon: "error",
@@ -87,6 +111,19 @@ document.addEventListener("DOMContentLoaded", function () {
   function validateEmail(email) {
     const re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
     return re.test(email);
+  }
+
+function validateFullName(fullName) {
+  const re = /^[a-zA-Z]+( [a-zA-Z]+)+$/;
+  return re.test(fullName);
+}
+//   function validateFullName(fullName) {
+//     const re = /^[a-zA-Z ]+$/;
+//     return re.test(fullName);
+// }
+  function validatePhone(phone) {
+    const re = /^[0-9]{10}$/;
+    return re.test(phone);
   }
 });
 
