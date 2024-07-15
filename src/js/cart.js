@@ -159,5 +159,14 @@ export function cartActions() {
       saveCart();
       updateCartCount();
     }
+    
   });
+
+  //Funcion para redirigir a la plataforma de pago
+  const checkoutButton = document.querySelector(".cart-actions button");
+  if (checkoutButton) {
+    checkoutButton.addEventListener("click", () => {
+      window.location.href = "plataformaPago.html";
+    });
+  }
 }
