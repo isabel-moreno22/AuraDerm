@@ -1,0 +1,134 @@
+.carousel2 {
+  position: relative;
+  overflow: hidden;
+  max-width: 1920px;
+  min-width: 480px;
+  margin: auto;
+  height: 900px;
+}
+.slide {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+.active {
+  opacity: 1;
+}
+
+.title-container {
+  text-align: center;
+  margin-top: 80px;
+  margin-bottom: 50px;
+  color: #024959;
+}
+
+.carousel-container {
+  position: absolute;
+  width: 100%;
+  overflow: hidden;
+  height: auto;
+}
+
+.carousel {
+  height: auto;
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel-arrow {
+  position: absolute;
+  top: 10%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 25px;
+  color: #ccc;
+  z-index: 100;
+}
+
+.left-arrow {
+  left: 40px;
+}
+
+.right-arrow {
+  right: 40px;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.carousel-logo {
+  width: 100px;
+  margin: 80px;
+  opacity: 0.5;
+  transition: opacity 0.5s ease;
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+
+.carousel-logo:hover {
+  opacity: 1;
+}
+
+.banner-container,
+.banner {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 8%;
+  height: auto;
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 1200px) {
+  .carousel2,
+  .slide {
+    height: 700px;
+  }
+
+  .carousel-logo {
+    margin: 50px;
+    height: auto;
+  }
+
+  .banner-container {
+    margin-top: 22%;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel2,
+  .slide {
+    height: 500px;
+  }
+  .carousel-logo {
+    margin: 30px;
+    height: auto;
+  }
+  .banner-container {
+    margin-top: 40%;
+  }
+}
+
+@media (max-width: 490px) {
+  .carousel2,
+  .slide {
+    height: 300px;
+  }
+  .carousel-logo {
+    margin: 20px;
+    height: auto;
+  }
+
+  .banner-container {
+    margin-top: 50%;
+  }
+}

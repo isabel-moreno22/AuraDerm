@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inicio</title>
+    <link href="../src/public/css/inicio.css" rel="stylesheet" />
+    <link href="../src/public/css/nav.css" rel="stylesheet" />
+    <link href="../src/public/css/footer.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header></header>
+    <div class="carousel2">
+      <img
+        src="../src/public/img/banners_Mesa de trabajo 1.jpg"
+        class="slide active"
+      />
+      <img src="../src/public/img/banners-02.jpg" class="slide" />
+      <img src="../src/public/img/banners-03.jpg" class="slide" />
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const slides = document.querySelectorAll(".slide");
+        let currentIndex = 0;
+
+        function cycleSlides() {
+          slides[currentIndex].classList.remove("active");
+          currentIndex = (currentIndex + 1) % slides.length;
+          slides[currentIndex].classList.add("active");
+        }
+
+        setInterval(cycleSlides, 3000);
+      });
+    </script>
+    <main>
+      <div class="title-container">
+        <h1>Nuestras marcas</h1>
+      </div>
+      <div class="carousel-container">
+        <div class="carousel-arrow left-arrow">&#10094;</div>
+        <div class="carousel">
+          <div class="carousel-track">
+            <img
+              src="../src/public/img/marca1.png"
+              alt="Logo 1"
+              class="carousel-logo"
+            />
+            <img
+              src="../src/public/img/marca2.png"
+              alt="Logo 2"
+              class="carousel-logo"
+            />
+            <img
+              src="../src/public/img/marca3.png"
+              alt="Logo 3"
+              class="carousel-logo"
+            />
+            <img
+              src="../src/public/img/marca4.png"
+              alt="Logo 4"
+              class="carousel-logo"
+            />
+            <img
+              src="../src/public/img/marca5.png"
+              alt="Logo 5"
+              class="carousel-logo"
+            />
+            <img
+              src="../src/public/img/marca6.png"
+              alt="Logo 5"
+              class="carousel-logo"
+            />
+            <img
+              src="../src/public/img/marca7.webp"
+              alt="Logo 6"
+              class="carousel-logo"
+            />
+            <img
+              src="../src/public/img/marca8.avif"
+              alt="Logo 7"
+              class="carousel-logo"
+            />
+            <img
+              src="../src/public/img/marca9.webp"
+              alt="Logo 8"
+              class="carousel-logo"
+            />
+          </div>
+        </div>
+        <div class="carousel-arrow right-arrow">&#10095;</div>
+      </div>
+
+      <div class="banner-container">
+        <img class="banner" src="../src/public/img/image.png" />
+      </div>
+    </main>
+    <footer></footer>
+    <script type="module" src="../src/js/funcionalidad.js"></script>
+    <script src="../src/js/inicio.js"></script>
+  </body>
+</html>

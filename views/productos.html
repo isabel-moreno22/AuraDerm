@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Productos</title>
+  <link rel="stylesheet" href="/src/public/css/products.css" />
+  <link href="../src/public/css/nav.css" rel="stylesheet" />
+  <link href="../src/public/css/footer.css" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body>
+  <header></header>
+  <main>
+    <section class="main-container">
+      <section id="mobile-filters">
+        <div class="mobile-filters-sidebar-btn">
+          <svg id="filter-btn" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M15 10.5A3.502 3.502 0 0 0 18.355 8H21a1 1 0 1 0 0-2h-2.645a3.502 3.502 0 0 0-6.71 0H3a1 1 0 0 0 0 2h8.645A3.502 3.502 0 0 0 15 10.5zM3 16a1 1 0 1 0 0 2h2.145a3.502 3.502 0 0 0 6.71 0H21a1 1 0 1 0 0-2h-9.145a3.502 3.502 0 0 0-6.71 0H3z">
+              </path>
+            </g>
+          </svg>
+          <h2>Filtrar Productos</h2>
+        </div>
+        <div class="filters-sidebar">
+          <div class="filters-sidebar-header">
+          <h2>Filtros</h2>
+          <svg
+            id="close-filters-btn"
+            xmlns="http://www.w3.org/2000/svg"
+            width="26"
+            height="26"
+            fill="currentColor"
+            class="bi bi-x-circle"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"
+            />
+            <path
+              d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"
+            />
+          </svg>
+        </div>
+          <div id="categoryFilters" class="filters">
+            <h3>Categoría</h3>
+            <label><input type="checkbox" value="Limpiadores y tónicos" /> Limpiadores y tónicos</label>
+            <label><input type="checkbox" value="Jabones" /> Jabones</label>
+            <label><input type="checkbox" value="Protección solar" /> Protección solar</label>
+            <label><input type="checkbox" value="Cremas faciales" /> Cremas faciales</label>
+            <label><input type="checkbox" value="Labios" /> Labios</label>
+            <label><input type="checkbox" value="Contorno de ojos" /> Contorno de ojos</label>
+            <label><input type="checkbox" value="Mascarillas y exfoliantes" /> Mascarillas y exfoliantes</label>
+          </div>
+          <div id="skinTypeFilters" class="filters">
+            <h3>Tipo de Piel</h3>
+            <label><input type="checkbox" value="Grasa" /> Grasa</label>
+            <label><input type="checkbox" value="Mixta" /> Mixta</label>
+            <label><input type="checkbox" value="Seca" /> Seca</label>
+            <label><input type="checkbox" value="Sensible" /> Sensible</label>
+            <label><input type="checkbox" value="Todo tipo de piel" /> Todo tipo de piel</label>
+          </div>
+          <div id="priceFilter" class="filters">
+            <h3>Precio</h3>
+            <div class="price-filter">
+            <label for="minPrice">Min:</label>
+            <input type="number" class="minPrice" placeholder="0" />
+            <label for="maxPrice">Max:</label>
+            <input type="number" class="maxPrice" placeholder="-" />
+          </div>
+          </div>
+          <div class="filter-buttons">
+          <button class="applyFilters">Aplicar Filtros</button>
+          <button class="clearFilters">Limpiar Filtros</button>
+        </div>
+      </div>
+      </section>
+      <section id="desktop-filters">
+        <h2>Filtrar Productos</h2>
+          <div id="categoryFilters" class="filters">
+            <h3>Categoría</h3>
+            <label><input type="checkbox" value="Limpiadores y tónicos" /> Limpiadores y tónicos</label>
+            <label><input type="checkbox" value="Jabones" /> Jabones</label>
+            <label><input type="checkbox" value="Protección solar" /> Protección solar</label>
+            <label><input type="checkbox" value="Cremas faciales" /> Cremas y serums</label>
+            <label><input type="checkbox" value="Labios" /> Labios</label>
+            <label><input type="checkbox" value="Contorno de ojos" /> Contorno de ojos</label>
+            <label><input type="checkbox" value="Mascarillas y exfoliantes" /> Mascarillas y exfoliantes</label>
+          </div>
+          <div id="skinTypeFilters" class="filters">
+            <h3>Tipo de Piel</h3>
+            <label><input type="checkbox" value="Grasa" /> Grasa</label>
+            <label><input type="checkbox" value="Mixta" /> Mixta</label>
+            <label><input type="checkbox" value="Seca" /> Seca</label>
+            <label><input type="checkbox" value="Sensible" /> Sensible</label>
+            <label><input type="checkbox" value="Todo tipo de piel" /> Todo tipo de piel</label>
+          </div>
+          <div id="priceFilter" class="filters">
+            <h3>Precio</h3>
+            <div class="price-filter">
+            <label for="minPrice">Min:</label>
+            <input type="number" class="minPrice" placeholder="0" />
+            <label for="maxPrice">Max:</label>
+            <input type="number" class="maxPrice" placeholder="-" />
+          </div>
+          </div>
+          <div class="filter-buttons">
+          <button class="applyFilters">Aplicar Filtros</button>
+          <button class="clearFilters">Limpiar Filtros</button>
+        </div>
+      </div>
+      </section>
+      <section id="productContainer" class="product-container">
+      </section>
+    </div>
+    </main>
+    <footer></footer>
+  <script src="/src/js/mainProductos.js"></script>
+  <script type="module" src="/src/js/funcionalidad.js"></script>
+</body>
+
+</html>

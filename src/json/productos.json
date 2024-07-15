@@ -1,0 +1,111 @@
+[
+  {
+    "id": 1,
+    "name": "Jabón Líquido Caléndula 250ML",
+    "img": "https://naturalconexion.com/wp-content/uploads/2020/09/JAB-CALE-600x600.jpg",
+    "description": "Jabón líquido de Caléndula y Manzanilla es ideal para regalarle a tu piel limpieza, hidratación y frescura.",
+    "calificacion": "******",
+    "price": 33900,
+    "category": "Jabones",
+    "skinType": "Todo tipo de piel"
+  },
+  {
+    "id": 2,
+    "name": "Jabón Barra Artesanal 100GR",
+    "img": "https://naturalconexion.com/wp-content/uploads/2020/09/DSC09622-600x600.jpg",
+    "description": "Fórmula elaborada con extractos de caléndula y manzanilla que, por sus propiedades, estimulan la regeneración de tejidos y ayudan en el control de barros y espinillas.",
+    "price": 21900,
+    "category": "Jabones",
+    "skinType": "Grasa"
+  },
+  {
+    "id": 3,
+    "name": "Jabón Líquito Té Verde 250ML",
+    "img": "https://naturalconexion.com/wp-content/uploads/2021/11/DSC09576-600x600.jpg",
+    "description": "Fórmula fluida que por sus ingredientes activos ayuda a eliminar las impurezas y células muertas de la piel, controlando el exceso de grasa.",
+    "price": 33900,
+    "category": "Jabones",
+    "skinType": "Grasa"
+  },
+  {
+    "id": 4,
+    "name": "Tónico Natural Caléndula 120ML",
+    "img": "https://naturalconexion.com/wp-content/uploads/2020/09/CALENDULA-600x600.jpg",
+    "description": "Nuestro Tónico Natural, con fórmula libre de alcohol etílico (Etanol), tonifica la piel sin resecar.",
+    "price": 29900,
+    "category": "Limpiadores y tónicos",
+    "skinType": "Sensible"
+  },
+  {
+    "id": 5,
+    "name": "Tónico Natural Rosas 120ML",
+    "img": "https://naturalconexion.com/wp-content/uploads/2020/09/ROSAS-600x600.jpg",
+    "description": "Nuestro Tónico facial de rosas es ideal para todo tipo de piel. Ayuda a mejorar la apariencia de los poros, equilibra el pH, hidrata, refresca y purifica la piel.",
+    "price": 29900,
+    "category": "Limpiadores y tónicos",
+    "skinType": "Todo tipo de piel"
+  },
+  {
+    "id": 6,
+    "name": "Tónico Natural Té Verde 120ML",
+    "img": "https://naturalconexion.com/wp-content/uploads/2020/09/TE-VERDE-1-600x600.jpg",
+    "description": "Nuestro tónico facial de Té verde es ideal para pieles grasas, con barros y espinillas. Ayuda a mejorar la apariencia de los poros, equilibra el pH, hidrata, tonifica, refresca y purifica la piel.",
+    "price": 29900,
+    "category": "Limpiadores y tónicos",
+    "skinType": "Grasa"
+  },
+  {
+    "id": 7,
+    "name": "Protector Labial Frutos Rojos 5GR",
+    "img": "https://naturalconexion.com/wp-content/uploads/2023/01/DSC09593-600x600.jpg",
+    "description": "La combinación de estos ingredientes forman una barrera que protege los labios de los agentes externos como el sol, el viento y la polución; aportando hidratación y nutrición, además de regenerar los labios secos y agrietados.",
+    "price": 12900,
+    "category": "Labios",
+    "skinType": "Todo tipo de piel"
+  },
+  {
+    "id": 8,
+    "name": "Protector Labial Menta 5GR",
+    "img": "https://naturalconexion.com/wp-content/uploads/2021/11/MENTA-600x600.jpg",
+    "description": "La perfecta combinación de ingredientes naturales que cuidan, hidratan, nutren, protegen y regeneran tus labios. Solo para uso externo.",
+    "price": 12900,
+    "category": "Labios",
+    "skinType": "Todo tipo de piel"
+  },
+  {
+    "id": 9,
+    "name": "Protector Labial Caléndula 5GR",
+    "img": "https://naturalconexion.com/wp-content/uploads/2021/04/DSC09592-600x600.jpg",
+    "description": "Nuestros Hidratantes y Protectores Labiales, están hechos a base de ingredientes naturales como la caléndula, la manzanilla, la cera de abejas y el aceite de oliva.",
+    "price": 12900,
+    "category": "Labios",
+    "skinType": "Todo tipo de piel"
+  },
+  {
+    "id": 10,
+    "name": "Protector Solar / SPF 50+ 30GR",
+    "img": "https://naturalconexion.com/wp-content/uploads/2021/09/DSC09590-600x600.jpg",
+    "description": "Que nunca te falte en tu rutina diaria la protección a tu piel, cuídala de manera natural. Hipoalergénico y dermatológicamente probado.",
+    "price": 27900,
+    "category": "Protección solar",
+    "skinType": "Todo tipo de piel"
+  },
+  {
+    "id": 11,
+    "name": "Contorno de Ojos Café 30GR",
+    "img": "https://naturalconexion.com/wp-content/uploads/2020/09/DSC09603.jpg",
+    "description": "Transforma y revitaliza tu mirada con el poder hidratante tomado directamente de la naturaleza y diseñado especialmente para ti. Gracias a sus componentes naturales nuestras  cremas contorno de ojos previenen la aparición de arrugas prematuras y reducen bolsas y ojeras.",
+    "price": 44900,
+    "category": "Contorno de ojos",
+    "skinType": "Todo tipo de piel"
+  },
+  {
+    "id": 12,
+    "name": "Repuesto Jabón Líquido Caléndula 500ML",
+    "img": "https://naturalconexion.com/wp-content/uploads/2021/08/DSC09633-1-scaled-600x600.jpg",
+    "description": "Nuestro jabón líquido con extractos de Caléndula y Manzanilla es ideal para regalarle a tu piel limpieza, hidratación y frescura. Puedes utilizarlo para tu cuidado facial y corporal.",
+    "price": 33900,
+    "category": "Jabones",
+    "skinType": "Todo tipo de piel"
+  }
+]

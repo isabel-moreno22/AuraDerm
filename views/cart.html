@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tu carrito</title>
+    <link href="../src/public/css/nav.css" rel="stylesheet" />
+    <link href="../src/public/css/footer.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../src/public/css/cart.css" />
+  </head>
+  <body>
+    <header></header>
+<main>
+    <!-- Desplegable carrito -->
+    <div class="sidecart">
+      <div class="cart-content">
+        <!-- Cart header -->
+        <div class="cart-header">
+          <svg
+            id="close-cart-btn"
+            xmlns="http://www.w3.org/2000/svg"
+            width="26"
+            height="26"
+            fill="currentColor"
+            class="bi bi-x-circle"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"
+            />
+            <path
+              d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"
+            />
+          </svg>
+          <h2 class="cart-h2">Tu carrito</h2>
+        </div>
+        <!-- Cart items -->
+        <div id="cart-items" class="cart-items">
+          <p id="empty-cart-message" class="empty-cart-message">
+            Carrito vacío, aún no tienes productos dentro del carrito
+          </p>
+        </div>
+        <!-- Cart actions -->
+        <div class="cart-actions">
+          <div class="subtotal">
+            <p>Subtotal:</p>
+            <p>$<span id="subtotal-price">0.00</span></p>
+          </div>
+          <button>Ir a pagar</button>
+        </div>
+      </div>
+    </div>
+    <!-- Fin desplegable carrito -->
+  </main>
+    <footer></footer>
+    <script src="../src/js/cart.js"></script>
+    <script type="module" src="/src/js/funcionalidad.js"></script>
+  </body>
+</html>

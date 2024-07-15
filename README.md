@@ -1,3 +1,0 @@
-# AuraDerm
-
-prueba 

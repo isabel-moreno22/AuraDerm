@@ -1,0 +1,149 @@
+
+.dividir {
+  padding: 25% 0;
+  width: 100%;
+  height: 100%;
+}
+.logo {
+  display: none;
+}
+
+.form-container {
+  width: 100%;
+  height: 100%;
+  margin: 0px auto;
+  padding: 20px;
+}
+
+h2{
+  text-align: center;
+  margin-bottom: 20px;
+}
+.form-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.form-group {
+  margin-bottom: 15px;
+}
+.form-group label {
+  margin-bottom: 5px;
+  font-weight: 600;
+  color: var(--icon-color);
+}
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--primary-color);
+  border-radius: 5px;
+  margin-top: 10px;
+
+}
+.form-group input:focus {
+  outline: none;
+}
+
+.botones-inicar-registrarse {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  width: 100%;
+  gap: 2px;
+}
+
+.botones-inicar-registrarse a button {
+  width: 98%;
+  height: 40px;
+  border-width: 1.5px;
+  border-color: var(--text-color);
+  cursor: pointer;
+  font-weight: bold;
+  margin-bottom: 10%;
+  transition: 0.3s ease all;
+  border-radius: 5px;
+}
+
+#buton-iniciar1 {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+#buton-registrarse1 {
+  border: 1px solid var(--secondary-color);
+  background-color: transparent ;
+}
+
+#buton-iniciar1:hover,
+.botones-inicar-registrarse button:active,
+.botones-inicar-registrarse button:focus {
+  color: var(--text-color);
+  color: white;
+  background-color: var(--text-color);
+}
+
+.boton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn-submit {
+  width: 70%;
+  padding: 10px;
+  background-color: #026773;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.btn-submit:hover {
+  background-color: var(--text-color)
+}
+#terminosYCondiciones{
+  text-align: center;
+  margin-top: 20px;
+}
+
+#terminosYCondiciones span{
+  font-weight: 600;
+}
+@media (min-width: 768px) {
+  .dividir {
+    padding: 15% 20%;
+  }
+}
+@media (min-width: 1000px) {
+  .dividir {
+    padding: 0% 0%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+  }
+
+  .informacion-formulario {
+    padding: 10% 15%;
+  }
+
+  .form-group input {
+    padding: 5px;
+    font-size: 14px;
+  }
+
+  .logo {
+    display: block;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--icon-color);
+  }
+
+  .logo img {
+    width: 250px;
+    height: 250px;
+  }
+}
+@media (min-width: 1024px) {
+  .informacion-formulario {
+    padding: 20% 20%;
+  }
+}

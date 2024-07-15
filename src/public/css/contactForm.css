@@ -1,0 +1,176 @@
+.center-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#contact-form-h2 {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 22px;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  margin: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.info-container {
+  background-color: var(--natural-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 95%;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+#contact-form-p {
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  font-family: "Urbanist", sans-serif;
+}
+
+#contact-form-p span {
+  font-size: 20px;
+  font-weight: 550;
+}
+
+.contact-icon,
+.mail-icon {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+  font-size: 20px;
+}
+
+.formulary-container {
+  border-radius: 10px;
+  width: 95%;
+  padding: 20px;
+  margin: 10px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#contact-form {
+  width: 100%;
+}
+.formulary-container label {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--icon-color);
+}
+.contact-form-input,
+textarea {
+  width: 100%;
+  padding: 5px;
+  margin: 10px 0;
+  border: 1px solid var( --primary-color);
+  border-radius: 5px;
+}
+
+.contact-form-input:focus,
+textarea:focus {
+  outline: none;
+}
+
+textarea {
+  resize: none;
+  height: 15vh;
+}
+
+.enviar {
+  font-size: 16px;
+  font-weight: bold;
+  display: block;
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 300px;
+}
+
+.error-message, #thank-you-message{
+  font-size: 16px;
+  margin: 10px;
+  display: none;
+  text-align: center;
+  font-family: "Urbanist", sans-serif;
+}
+
+.enviar:hover {
+  background: var(--text-color);
+}
+
+@media (min-width: 768px) {
+  #contact-form-h2 {
+    font-size: 25px;
+  }
+  .container {
+    width: 75%;
+  }
+  #contact-form-p {
+    font-size: 20px;
+    line-height: 1.5;
+  }
+
+  #contact-form-p span {
+    font-size: 23px;
+    font-weight: 550;
+  }
+  .contact-icon,
+  .mail-icon {
+    font-size: 23px;
+  }
+  .formulary-container label {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    flex-direction: row;
+    width: 75%;
+}
+
+.info-container{
+    width: 50%; 
+    margin: 10px;
+    height: 75vh;
+}
+
+.formulary-container{
+  width: 50%;
+  margin: 20px;
+}
+.contact-form-input,
+textarea {
+  font-size: 20px;
+}
+}
+
+
+@media (min-width: 1200px) {
+  #contact-form-h2 {
+    font-size: 28px;
+  }
+  .container {
+    width: 65%;
+}
+}
