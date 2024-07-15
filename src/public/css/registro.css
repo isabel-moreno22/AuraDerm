@@ -40,7 +40,7 @@ h2{
 
 }
 .form-group input:focus {
-  border-color: none;
+  outline: none;
 }
 
 .botones-inicar-registrarse {
