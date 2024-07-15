@@ -106,7 +106,7 @@ p {
 }
 
 .text-section2 p {
-  font-size: 12px;
+  font-size: 18px;
 }
 /* section3 */
 
@@ -133,52 +133,87 @@ p {
 }
 
 .text-section3 p {
-  font-size: 12px;
+  font-size: 18px;
 }
 
 /* section4 */
-.titulo-seccion4 {
+
+.titulo-seccion4{
+  width: 100%;
+  height: 100%;
   text-align: center;
-  margin-bottom: 20px;
+  align-items: center;
+  font-size: 18px;
+  margin-top: 5%;
 }
 
-.section4 {
+.container{
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  text-align: center;
   align-items: center;
-  margin-bottom: 20px;
+  gap: 50px 0;
+  padding: 10% 15% ;
 }
 
-.contenedor-4 {
-  overflow: hidden;
-  width: 280px;
+.contenedor-card{
+  max-width:  390px;
+  height: 100%;
+  border: 1px solid #3ca6a6;
+  border-radius: 10%;
+  box-shadow: 0 6px 8px rgba(37, 189, 161, 0.7), 0 12px 14px rgba(14, 187, 221, 0.7);
+}
+
+.contenedor-img-persona{
+  width: 100%;
+  height: 250px;
   display: flex;
   justify-content: center;
-  align-items: center;
-  text-align: center;
+  border-radius: 10%;
+  padding: 3%;
+  margin-bottom: 5%;
 }
 
-.slider-inner {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  height: 200px;
-  width: 100%;
-  transition: all 0.5s ease-in;
-}
-
-.slider-inner img {
-  aspect-ratio: 16/9;
+.contenedor-img-persona img{
+  width: 260px;
+  height: 100%;
+  padding: 5%;
   object-fit: cover;
 }
 
-.contend-img img {
-  background-color: #ebe2e2;
-  width: 280px;
-  height: 150px;
-  border-radius: 120px 80px 120px 80px;
+.texto_card{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
+.iconos_redes_sociales{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 5%;
+  fill: #333333
+   
+}
+
+.iconos_redes_sociales a svg{
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  transition: .8s;
+}
+
+.iconos_redes_sociales a svg:hover{
+  fill: #3ca6a6;
+  scale: 1.5;
+}
+
+
 
 @media (min-width: 768px) {
   .section1 {
@@ -298,63 +333,37 @@ p {
   }
 
   /* section4 */
-  .titulo-seccion4 {
-    font-size: 26px;
-    margin-top: 20px;
-    margin-bottom: 40px;
+
+  .titulo-seccion4{
+    font-size: 20px;
+  }
+  
+  .container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 10% 22% ;
+    gap: 30px;
   }
 
-  .section4 {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 20px;
+  .contenedor-card{
+    max-width:  260px;
   }
-
-  .contenedor-4 {
-    overflow: hidden;
-    width: 580px;
-    height: 500px;
-    display: flex;
-    justify-content: center;
-    align-items: start;
-    text-align: center;
+    
+  .texto_card h3{
+    font-size: 22px;
   }
+  
 
-  .slider-inner {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    height: 200px;
-    width: 100%;
-    transition: all 0.5s ease-in;
-  }
-
-  .slider-inner img {
-    aspect-ratio: 16/9;
-    object-fit: cover;
-  }
-
-  .contend-img img {
-    background-color: #e7e0e0;
-    width: 580px;
-    height: 400px;
-    border-radius: 200px 200px 200px 200px;
-    margin-bottom: 10px;
-  }
-
-  .contend-img h3 {
-    font-size: 26px;
-  }
-
-  .contend-img h6 {
-    margin-bottom: 10px;
+  .texto_card h5{
     font-size: 14px;
+    font-weight: 500;
   }
-}
+  
+  .iconos_redes_sociales a svg{
+    width: 30px;
+    height: 30px;
+  }
+  
 
 @media (min-width: 1024px) {
   .section1 {
@@ -395,33 +404,62 @@ p {
   }
 
   /* section4 */
-  .titulo-seccion4 {
-    font-size: 26px;
-    margin-bottom: 10px;
-  }
-
-  .section4 {
+  .titulo-seccion4{
     width: 100%;
     height: 100%;
+    text-align: center;
+    align-items: center;
+    font-size: 18px;
+    margin-top: 10% 5%;
+  }
+  
+  .container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+    padding: 5% 22% ;
+    
+  }
+  .contenedor-card{
+    max-width: 230px;
+    height: 360px;
+    padding-top: 10px;
+  }
+  
+  .contenedor-img-persona{
+    height: 230px;
+  }
+  
+
+  .texto_card{
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    margin-bottom: 20px;
+  }
+  
+  .iconos_redes_sociales{
+    height: auto;
+  }
+  
+  .iconos_redes_sociales a svg{
+    width: 24px;
+    height: 24px;
+ 
+  }
+}
+
+@media (min-width: 1300px) {
+
+  .container{
+    padding: 5% 15%;
   }
 
-  .contenedor-4 {
-    width: 480px;
-    height: 500px;
+  .contenedor-card{
+    max-width: 280px;
+    height: auto;
   }
-
-  .slider-inner img {
-    margin-top: 50px;
+  .contenedor-img-persona{
+    height: 300px;
   }
-
-  .contend-img img {
-    width: 480px;
-    height: 350px;
-    border-radius: 150px 150px 150px 150px;
-  }
+}
 }

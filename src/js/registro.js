@@ -1,74 +1,129 @@
-document.getElementById('registerForm').addEventListener('submit', function(event) {
-    event.preventDefault();
+document.addEventListener("DOMContentLoaded", function () {
+  const registerForm = document.getElementById("registerForm");
 
-    // VALORES
-    const fullName = document.getElementById('fullName').value;
-    const phone = document.getElementById('phone').value;
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
-    const confirmPassword = document.getElementById('confirmPassword').value;
+  if (registerForm) {
+    registerForm.addEventListener("submit", function (event) {
+      event.preventDefault();
 
-    // LIMPIAR ALERTAS PREVIAS
-    document.getElementById('alertContainer').innerHTML = '';
+      const fullName = document.getElementById("fullName").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value.trim();
+      const confirmPassword = document.getElementById("confirmPassword").value.trim();
 
-    // VALIDACIONES
-    if (password !== confirmPassword) {
-        showAlert('Las contraseñas no coinciden', 'danger');
+      if (!fullName || !phone || !email || !password || !confirmPassword) {
+        Swal.fire({
+          icon: "error",
+          title: "Campos Vacíos",
+          text: "Por favor llene todos los campos",
+          position: "top-end",
+          showConfirmButton: false,
+          timer: 3000,
+        });
         return;
-    }
+      }
 
-    if (!validateEmail(email)) {
-        showAlert('Correo electrónico no válido', 'danger');
+      if (!validateEmail(email)) {
+        Swal.fire({
+          icon: "error",
+          title: "Email Inválido",
+          text: "Por favor ingrese un correo electrónico válido",
+          position: "top-end",
+          showConfirmButton: false,
+          timer: 3000,
+        });
         return;
-    }
+      }
 
-    if (!validatePhone(phone)) {
-        showAlert('Número de teléfono no válido', 'danger');
+      if (!validateFullName(fullName)) {
+        Swal.fire({
+          icon: "error",
+          title: "Nombre Inválido",
+          text: "Por favor ingrese un Nombre válido",
+          position: "top-end",
+          showConfirmButton: false,
+          timer: 3000,
+        });
         return;
-    }
+      }
 
-    // JSON
-    const user = {
-        fullName: fullName,
-        phone: phone,
-        email: email,
-        password: password
-    };
+      if (!validatePhone(phone)) {
+        Swal.fire({
+          icon: "error",
+          title: "Número de Teléfono Inválido",
+          text: "Por favor ingrese un Número de Teléfono válido",
+          position: "top-end",
+          showConfirmButton: false,
+          timer: 3000,
+        });
+        return;
+      }
 
-    // Mostrar JSON en consola
-    console.log(JSON.stringify(user));
+      if (password !== confirmPassword) {
+        Swal.fire({
+          icon: "error",
+          title: "Contraseñas no coinciden",
+          text: "Las contraseñas no coinciden",
+          position: "top-end",
+          showConfirmButton: false,
+          timer: 3000,
+        });
+        return;
+      }
 
-    // LIMPIAR FORM 
-    document.getElementById('registerForm').reset();
+      const userData = {
+        fullName,
+        phone,
+        email,
+        password,
+      };
 
-    showAlert('Usuario registrado con éxito', 'success');
-});
+      fetch("http://localhost:8080/clientes/add", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(userData),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          Swal.fire({
+            icon: "success",
+            title: "¡Usuario registrado!",
+            text: "Usuario registrado con éxito",
+            position: "top-end",
+            showConfirmButton: false,
+            timer: 1500,
+          }).then(() => {
+            window.location.href = "/views/iniciarSesion.html";
+          });
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+          Swal.fire({
+            icon: "error",
+            title: "Error",
+            text: "Hubo un problema al registrar el usuario",
+            position: "top-end",
+            showConfirmButton: false,
+            timer: 3000,
+          });
+        });
+    });
+  }
 
-function showAlert(message, type) {
-    const alertContainer = document.getElementById('alertContainer');
-    const alert = document.createElement('div');
-    alert.className = `alert alert-${type} alert-dismissible fade show`;
-    alert.role = 'alert';
-    alert.innerHTML = `
-        ${message}
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
-    `;
-    alertContainer.appendChild(alert);
-
-    setTimeout(() => {
-        alert.classList.remove('show');
-        alert.addEventListener('transitionend', () => alert.remove());
-    }, 3000);
-}
-
-function validateEmail(email) {
+  function validateEmail(email) {
     const re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
     return re.test(email);
-}
+  }
 
-function validatePhone(phone) {
+  function validateFullName(fullName) {
+    const re = /^[a-zA-Z]+( [a-zA-Z]+)+$/;
+    return re.test(fullName);
+  }
+
+  function validatePhone(phone) {
     const re = /^[0-9]{10}$/;
     return re.test(phone);
-}
+  }
+});

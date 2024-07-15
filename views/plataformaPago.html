@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Finaliza tu compra</title>
+    <link href="../src/public/css/nav.css" rel="stylesheet" />
+    <link href="../src/public/css/footer.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../src/public/css/plataformaPago.css" />
+  </head>
+  <body>
+    <header></header>
+    <main>
+      <div class="pago-container">
+        <div class="inputs-container">
+          <form action="platafotmaPago.html">
+            <div class="pago-info">
+              <div class="contacto">
+                <h3>Contacto</h3>
+                <a href="/views/iniciarSesion.html">Iniciar sesión</a>
+              </div>
+              <input type="email" placeholder="Correo electrónico" required />
+              <label
+                ><input
+                  type="checkbox"
+                  value="Enviarme novedades y ofertas por correo electrónico"
+                />Enviarme novedades y ofertas por correo electrónico</label
+              >
+            </div>
+            <div class="pago-info">
+              <h3>Entrega</h3>
+              <select name="País" id="pais">
+                <option value="colombia">Colombia</option>
+              </select>
+              <div class="nombre-apellidos">
+                <input type="text" placeholder="Nombre" required />
+                <input type="text" placeholder="Apellidos" required />
+              </div>
+              <input type="text" placeholder="Dirección" required />
+              <div class="direccion">
+                <input type="text" placeholder="Ciudad" required />
+                <input type="text" placeholder="Departamento" required />
+              </div>
+              <input type="tel" placeholder="Teléfono" required />
+              <label
+                ><input
+                  type="checkbox"
+                  value="Guardar mi información y consultar más rápidamente la próxima vez"
+                />Guardar mi información y consultar más rápidamente la próxima
+                vez</label
+              >
+            </div>
+            <div class="pago-info">
+              <h3>Métodos de envío</h3>
+              <p>
+                Ingresa tu direccion de envío para ver los métodos disponibles.
+              </p>
+            </div>
+            <div class="pago-info" id="pago">
+              <h3>Pago</h3>
+              <div class="div-pagos">
+                <label>
+                  <input
+                    type="radio"
+                    name="pago"
+                    value="PSE"
+                    id="pse-radio"
+                  />
+                  Paga a Crédito o Débito con PSE
+                  <img
+                    src="/src/public/img/plataformaPago/pse-logo-B00717880A-seeklogo.com.png"
+                    alt="Logo PSE"
+                    id="pse-img"
+                  />
+                </label>
+              </div>
+              <div class="mensaje" id="pse-mensaje">
+                Luego de hacer clic en "Pagar con PSE", se te redirigirá a la
+                plataforma de PSE para completar tu compra de forma segura.
+              </div>
+              <div class="div-pagos">
+                <label>
+                  <input
+                    type="radio"
+                    name="pago"
+                    value="Wompi"
+                    id="wompi-radio"
+                  />
+                  Wompi
+                  <img
+                    src="/src/public/img/plataformaPago/wompi-logo.webp"
+                    alt="Logo Wompi"
+                    id="wompi-img"
+                  />
+                </label>
+              </div>
+              <div class="mensaje" id="wompi-mensaje">
+                Luego de hacer clic en "Pagar con Wompi", se te redirigirá a la
+                plataforma de Wompi para completar tu compra de forma segura.
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="productos-container">
+          <div class="productos" id="productos"></div>
+          <div class="descuento">
+            <input type="text" placeholder="Código de descuento" />
+            <button type="submit">Aplicar</button>
+          </div>
+          <div class="totales">
+            <p>Subtotal:</p>
+            <p>$<span id="subtotal-price">0.00</span></p>
+          </div>
+          <div class="totales">
+            <p>Métodos de envío:</p>
+            <p>$<span id="envio-price">0.00</span></p>
+          </div>
+          <div class="totales">
+            <p>Total:</p>
+            <p>$<span id="total-price">0.00</span></p>
+          </div>
+          <button id="pagar" type="submit">Pagar ahora</button>
+        </div>
+      </div>
+    </main>
+    <footer></footer>
+    <script src="../src/js/plataformaPago.js" type="module"></script>
+    <script src="../src/js/cart.js" type="module"></script>
+    <script type="module" src="/src/js/funcionalidad.js"></script>
+  </body>
+</html>

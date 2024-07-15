@@ -63,6 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
         return;
       }
+      
       if (!message) {
         Swal.fire({
           icon: "error",
@@ -86,7 +87,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       emailjs.send("service_29qej1y", "template_igdkipv", templateParams).then(
         function (response) {
-          document.getElementById("thankYouMessage").style.display = "block";
+          document.getElementById("thank-you-message").style.display = "block";
           Swal.fire({
             icon: "success",
             title: "Enviado",
