@@ -2,18 +2,18 @@ document.addEventListener("DOMContentLoaded", function () {
   const registerForm = document.getElementById("registerForm");
 
   if (registerForm) {
-    registerForm.addEventListener("submit", function (event) {
+    registerForm.addEventListener("submit", async function (event) {
       event.preventDefault();
 
-      const fullName = document.getElementById("fullName").value.trim();
-      const phone = document.getElementById("phone").value.trim();
-      const email = document.getElementById("email").value.trim();
+      const nombre = document.getElementById("nombre").value.trim();
+      const telefono = document.getElementById("telefono").value.trim();
+      const correo = document.getElementById("correo").value.trim();
       const password = document.getElementById("password").value.trim();
       const confirmPassword = document
         .getElementById("confirmPassword")
         .value.trim();
 
-      if (!fullName || !phone || !email || !password || !confirmPassword) {
+      if (!nombre || !telefono || !correo || !password || !confirmPassword) {
         Swal.fire({
           icon: "error",
           title: "Campos Vacíos",
@@ -25,10 +25,10 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
       }
 
-      if (!validateEmail(email)) {
+      if (!validatecorreo(correo)) {
         Swal.fire({
           icon: "error",
-          title: "Email Inválido",
+          title: "correo Inválido",
           text: "Por favor ingrese un correo electrónico válido",
           position: "top-end",
           showConfirmButton: false,
@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
       }
 
-      if (!validateFullName(fullName)) {
+      if (!validatenombre(nombre)) {
         Swal.fire({
           icon: "error",
           title: "Nombre Inválido",
@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
       }
 
-      if (!validatePhone(phone)) {
+      if (!validatetelefono(telefono)) {
         Swal.fire({
           icon: "error",
           title: "Número de Teléfono Inválido",
@@ -86,70 +86,52 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       const userData = {
-        fullName,
-        phone,
-        email,
+        nombre,
+        telefono,
+        correo,
         password,
       };
 
-      console.log("User Data to be stored:", userData);
-      localStorage.setItem("userData", JSON.stringify(userData));
+      const result = await registerUser(userData);
 
-      Swal.fire({
-        icon: "success",
-        title: "¡Usuario registrado!",
-        text: "Usuario registrado con éxito",
-        position: "top-end",
-        showConfirmButton: false,
-        timer: 1500,
-      }).then(() => {
-        window.location.href = "/views/iniciarSesion.html";
-      });
+      if (result) {
+        Swal.fire({
+          icon: "success",
+          title: "¡Usuario registrado!",
+          text: "Usuario registrado con éxito",
+          position: "top-end",
+          showConfirmButton: false,
+          timer: 1500,
+        }).then(() => {
+          window.location.href = "/views/iniciarSesion.html";
+        });
+      } else {
+        Swal.fire({
+          icon: "error",
+          title: "Error",
+          text: "No se pudo registrar el usuario",
+          position: "top-end",
+          showConfirmButton: false,
+          timer: 3000,
+        });
+      }
     });
   }
 
-  function validateEmail(email) {
-    const re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-    return re.test(email);
-  }
-
-function validateFullName(fullName) {
-  const re = /^[a-zA-Z]+( [a-zA-Z]+)+$/;
-  return re.test(fullName);
-}
-//   function validateFullName(fullName) {
-//     const re = /^[a-zA-Z ]+$/;
-//     return re.test(fullName);
-// }
-  function validatePhone(phone) {
-    const re = /^[0-9]{10}$/;
-    return re.test(phone);
-  }
-});
-
-document.addEventListener("DOMContentLoaded", function () {
   const loginForm = document.getElementById("loginForm");
 
   if (loginForm) {
-    loginForm.addEventListener("submit", function (event) {
+    loginForm.addEventListener("submit", async function (event) {
       event.preventDefault();
 
-      const loginEmail = document.getElementById("loginEmail").value.trim();
+      const logincorreo = document.getElementById("logincorreo").value.trim();
       const loginPassword = document
         .getElementById("loginPassword")
         .value.trim();
 
-      console.log("Login Email:", loginEmail);
-      console.log("Login Password:", loginPassword);
+      const result = await loginUser(logincorreo, loginPassword);
 
-      const storedUserData = JSON.parse(localStorage.getItem("userData"));
-      console.log("Stored User Data:", storedUserData);
-
-      if (
-        storedUserData &&
-        storedUserData.email === loginEmail &&
-        storedUserData.password === loginPassword
-      ) {
+      if (result) {
         Swal.fire({
           icon: "success",
           title: "Inicio de sesión exitoso",
@@ -164,12 +146,27 @@ document.addEventListener("DOMContentLoaded", function () {
         Swal.fire({
           icon: "error",
           title: "Error de autenticación",
-          text: "Email o contraseña incorrectos",
+          text: "correo o contraseña incorrectos",
           position: "top-end",
           showConfirmButton: false,
           timer: 3000,
         });
       }
     });
+  }
+
+  function validatecorreo(correo) {
+    const re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+    return re.test(correo);
+  }
+
+  function validatenombre(nombre) {
+    const re = /^[a-zA-Z]+( [a-zA-Z]+)+$/;
+    return re.test(nombre);
+  }
+
+  function validatetelefono(telefono) {
+    const re = /^[0-9]{10}$/;
+    return re.test(telefono);
   }
 });
