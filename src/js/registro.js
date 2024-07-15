@@ -2,16 +2,18 @@ document.addEventListener("DOMContentLoaded", function () {
   const registerForm = document.getElementById("registerForm");
 
   if (registerForm) {
-    registerForm.addEventListener("submit", function (event) {
+    registerForm.addEventListener("submit", async function (event) {
       event.preventDefault();
 
-      const fullName = document.getElementById("fullName").value.trim();
-      const phone = document.getElementById("phone").value.trim();
-      const email = document.getElementById("email").value.trim();
+      const nombre = document.getElementById("nombre").value.trim();
+      const telefono = document.getElementById("telefono").value.trim();
+      const correo = document.getElementById("correo").value.trim();
       const password = document.getElementById("password").value.trim();
-      const confirmPassword = document.getElementById("confirmPassword").value.trim();
+      const confirmPassword = document
+        .getElementById("confirmPassword")
+        .value.trim();
 
-      if (!fullName || !phone || !email || !password || !confirmPassword) {
+      if (!nombre || !telefono || !correo || !password || !confirmPassword) {
         Swal.fire({
           icon: "error",
           title: "Campos Vacíos",
@@ -23,10 +25,10 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
       }
 
-      if (!validateEmail(email)) {
+      if (!validatecorreo(correo)) {
         Swal.fire({
           icon: "error",
-          title: "Email Inválido",
+          title: "correo Inválido",
           text: "Por favor ingrese un correo electrónico válido",
           position: "top-end",
           showConfirmButton: false,
@@ -35,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
       }
 
-      if (!validateFullName(fullName)) {
+      if (!validatenombre(nombre)) {
         Swal.fire({
           icon: "error",
           title: "Nombre Inválido",
@@ -47,11 +49,23 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
       }
 
-      if (!validatePhone(phone)) {
+      if (!validatetelefono(telefono)) {
         Swal.fire({
           icon: "error",
           title: "Número de Teléfono Inválido",
           text: "Por favor ingrese un Número de Teléfono válido",
+          position: "top-end",
+          showConfirmButton: false,
+          timer: 3000,
+        });
+        return;
+      }
+
+      if (!password || !confirmPassword) {
+        Swal.fire({
+          icon: "error",
+          title: "Contraseñas Vacías",
+          text: "Por favor ingrese y confirme su contraseña",
           position: "top-end",
           showConfirmButton: false,
           timer: 3000,
@@ -72,58 +86,87 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       const userData = {
-        fullName,
-        phone,
-        email,
+        nombre,
+        telefono,
+        correo,
         password,
       };
 
-      fetch("http://localhost:8080/clientes/add", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(userData),
-      })
-        .then((response) => response.json())
-        .then((data) => {
-          Swal.fire({
-            icon: "success",
-            title: "¡Usuario registrado!",
-            text: "Usuario registrado con éxito",
-            position: "top-end",
-            showConfirmButton: false,
-            timer: 1500,
-          }).then(() => {
-            window.location.href = "/views/iniciarSesion.html";
-          });
-        })
-        .catch((error) => {
-          console.error("Error:", error);
-          Swal.fire({
-            icon: "error",
-            title: "Error",
-            text: "Hubo un problema al registrar el usuario",
-            position: "top-end",
-            showConfirmButton: false,
-            timer: 3000,
-          });
+      const result = await registerUser(userData);
+
+      if (result) {
+        Swal.fire({
+          icon: "success",
+          title: "¡Usuario registrado!",
+          text: "Usuario registrado con éxito",
+          position: "top-end",
+          showConfirmButton: false,
+          timer: 1500,
+        }).then(() => {
+          window.location.href = "/views/iniciarSesion.html";
         });
+      } else {
+        Swal.fire({
+          icon: "error",
+          title: "Error",
+          text: "No se pudo registrar el usuario",
+          position: "top-end",
+          showConfirmButton: false,
+          timer: 3000,
+        });
+      }
     });
   }
 
-  function validateEmail(email) {
+  const loginForm = document.getElementById("loginForm");
+
+  if (loginForm) {
+    loginForm.addEventListener("submit", async function (event) {
+      event.preventDefault();
+
+      const logincorreo = document.getElementById("logincorreo").value.trim();
+      const loginPassword = document
+        .getElementById("loginPassword")
+        .value.trim();
+
+      const result = await loginUser(logincorreo, loginPassword);
+
+      if (result) {
+        Swal.fire({
+          icon: "success",
+          title: "Inicio de sesión exitoso",
+          text: "Bienvenido de nuevo",
+          position: "top-end",
+          showConfirmButton: false,
+          timer: 1500,
+        }).then(() => {
+          window.location.href = "/views/inicio.html";
+        });
+      } else {
+        Swal.fire({
+          icon: "error",
+          title: "Error de autenticación",
+          text: "correo o contraseña incorrectos",
+          position: "top-end",
+          showConfirmButton: false,
+          timer: 3000,
+        });
+      }
+    });
+  }
+
+  function validatecorreo(correo) {
     const re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-    return re.test(email);
+    return re.test(correo);
   }
 
-  function validateFullName(fullName) {
+  function validatenombre(nombre) {
     const re = /^[a-zA-Z]+( [a-zA-Z]+)+$/;
-    return re.test(fullName);
+    return re.test(nombre);
   }
 
-  function validatePhone(phone) {
+  function validatetelefono(telefono) {
     const re = /^[0-9]{10}$/;
-    return re.test(phone);
+    return re.test(telefono);
   }
 });
